@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASU ResearchFund - Arizona State University Research Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #8C1D40 0%, #FFC627 50%, #8C1D40 100%);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .research-badge {
+            background: linear-gradient(45deg, #f59e0b, #d97706);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+ <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold text-red-800"><a href="./landing-lage.html">ASU ResearchFund</a></div>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#explore" class="text-gray-700 hover:text-red-800 transition-colors">Explore Research</a>
+                    <a href="#categories" class="text-gray-700 hover:text-red-800 transition-colors">Categories</a>
+                    <a href="./list-of-reseachers.html" class="text-gray-700 hover:text-red-800 transition-colors">Researchers</a>
+                    <a href="#institutions" class="text-gray-700 hover:text-red-800 transition-colors">Institutions</a>
+                    <a href="#about" class="text-gray-700 hover:text-red-800 transition-colors">About</a>
+                    
+                                        <button class="bg-red-800 text-white px-4 py-2 rounded-lg hover:bg-red-900 transition-colors">Login</button>
+
+                    <button class="border border-red-800 text-red-800 px-4 py-2 rounded-lg hover:bg-red-800 hover:text-white transition-colors">Sign Up</button>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-gray-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+            </div>
+        </div>
+    </nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResearchFund - Crowdfunding for Science & Innovation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .progress-bar {
+            transition: width 0.5s ease;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+
+
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6">Fund Groundbreaking Research</h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-4xl mx-auto opacity-90">
+                    Connect with cutting-edge research projects from universities worldwide. Support the next scientific breakthrough.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                    <button class="bg-white text-red-800 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+                        Explore Research Projects
+                    </button>
+                    <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-red-800 transition-colors">
+                        Submit Your Research
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Search Bar -->
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-2xl p-6 shadow-2xl">
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <div class="flex-1">
+                            <input type="text" placeholder="Search research projects, keywords, or researchers..." 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <div class="md:w-48">
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent">
+                                <option>All Categories</option>
+                                <option>Medical Research</option>
+                                <option>Technology</option>
+                                <option>Environmental Science</option>
+                                <option>Social Sciences</option>
+                                <option>Engineering</option>
+                            </select>
+                        </div>
+                        <button class="bg-red-800 text-white px-8 py-3 rounded-lg hover:bg-red-900 transition-colors font-semibold">
+                            Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-white py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-3xl font-bold text-red-800 mb-2">$12.8M+</div>
+                    <div class="text-gray-600">Research Funded</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-red-800 mb-2">2,847</div>
+                    <div class="text-gray-600">Active Projects</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-red-800 mb-2">450+</div>
+                    <div class="text-gray-600">Universities</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-red-800 mb-2">89%</div>
+                    <div class="text-gray-600">Success Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Categories -->
+    <section id="categories" class="py-10 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Research Categories</h2>
+                <p class="text-xl text-gray-600">Explore groundbreaking research across various fields</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <!-- Medical Research -->
+                <div class="bg-gradient-to-br from-red-500 to-pink-600 rounded-2xl p-6 text-white text-center card-hover cursor-pointer">
+                    <div class="w-12 h-12 mx-auto mb-4">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 8h-2v3h-3v2h3v3h2v-3h3v-2h-3zM4 8h2v8c0 1.1.9 2 2 2h8v-2H8V8h2L7 5 4 8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-2">Medical</h3>
+                    <p class="text-sm opacity-90">487 projects</p>
+                </div>
+
+                <!-- Technology -->
+                <div class="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl p-6 text-white text-center card-hover cursor-pointer">
+                    <div class="w-12 h-12 mx-auto mb-4">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 3H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h3l-1 1v2h12v-2l-1-1h3c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 13H4V5h16v11z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-2">Technology</h3>
+                    <p class="text-sm opacity-90">623 projects</p>
+                </div>
+
+                <!-- Environmental -->
+                <div class="bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl p-6 text-white text-center card-hover cursor-pointer">
+                    <div class="w-12 h-12 mx-auto mb-4">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.66c.03-.08.06-.17.09-.25C6.84 17.25 9 15 12 15s5.16 2.25 5.25 4.09c.03.08.06.17.09.25l.95 2.66 1.89-.66C18.1 16.17 16 10 17 8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-2">Environment</h3>
+                    <p class="text-sm opacity-90">342 projects</p>
+                </div>
+
+                <!-- Social Sciences -->
+                <div class="bg-gradient-to-br from-purple-500 to-violet-600 rounded-2xl p-6 text-white text-center card-hover cursor-pointer">
+                    <div class="w-12 h-12 mx-auto mb-4">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63A1.5 1.5 0 0 0 18.54 8H16c-.8 0-1.54.37-2 1l-3 4v6h2v7h3v-7h4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-2">Social</h3>
+                    <p class="text-sm opacity-90">298 projects</p>
+                </div>
+
+                <!-- Engineering -->
+                <div class="bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl p-6 text-white text-center card-hover cursor-pointer">
+                    <div class="w-12 h-12 mx-auto mb-4">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-2">Engineering</h3>
+                    <p class="text-sm opacity-90">456 projects</p>
+                </div>
+
+                <!-- Physics -->
+                <div class="bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl p-6 text-white text-center card-hover cursor-pointer">
+                    <div class="w-12 h-12 mx-auto mb-4">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-2">Physics</h3>
+                    <p class="text-sm opacity-90">234 projects</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Research Projects -->
+    <section id="explore" class="py-10 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center mb-16">
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Featured Research Projects</h2>
+                    <p class="text-xl text-gray-600">Discover cutting-edge research that needs your support</p>
+                </div>
+                <div class="flex gap-2">
+                    <button class="px-4 py-2 bg-red-800 text-white rounded-lg hover:bg-red-900 transition-colors">All</button>
+                    <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">Trending</button>
+                    <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">Ending Soon</button>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Research Project 1 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                    <div class="h-48 bg-gradient-to-br from-blue-400 to-purple-500 relative">
+                        <div class="absolute top-4 left-4">
+                            <span class="research-badge text-white px-3 py-1 rounded-full text-sm font-semibold">Medical Research</span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-white text-gray-700 px-2 py-1 rounded text-xs font-semibold">Stanford University</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">AI-Powered Cancer Detection System</h3>
+                        <p class="text-gray-600 mb-4">Developing machine learning algorithms to detect early-stage cancer with 95% accuracy using medical imaging.</p>
+                        
+                        <div class="flex items-center mb-4">
+                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-xs font-bold text-blue-600">DR</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-sm">Dr. Rachel Kim</p>
+                                <p class="text-xs text-gray-500">Principal Investigator</p>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-2xl font-bold text-red-800">$127,450</span>
+                            <span class="text-gray-500">of $150,000</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2 mb-4">
+                            <div class="bg-red-800 h-2 rounded-full" style="width: 85%"></div>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-500 mb-4">
+                            <span>234 backers</span>
+                            <span>18 days left</span>
+                        </div>
+                        <button class="w-full bg-red-800 text-white py-3 rounded-lg hover:bg-red-900 transition-colors font-semibold">
+                            Fund This Research
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Research Project 2 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-emerald-500 relative">
+                        <div class="absolute top-4 left-4">
+                            <span class="research-badge text-white px-3 py-1 rounded-full text-sm font-semibold">Environmental</span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-white text-gray-700 px-2 py-1 rounded text-xs font-semibold">MIT</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Ocean Plastic Cleanup Technology</h3>
+                        <p class="text-gray-600 mb-4">Revolutionary biodegradable nets that capture microplastics while protecting marine life ecosystems.</p>
+                        
+                        <div class="flex items-center mb-4">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-xs font-bold text-green-600">MJ</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-sm">Prof. Maria Johnson</p>
+                                <p class="text-xs text-gray-500">Environmental Engineering</p>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-2xl font-bold text-red-800">$89,200</span>
+                            <span class="text-gray-500">of $120,000</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2 mb-4">
+                            <div class="bg-red-800 h-2 rounded-full" style="width: 74%"></div>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-500 mb-4">
+                            <span>189 backers</span>
+                            <span>25 days left</span>
+                        </div>
+                        <button class="w-full bg-red-800 text-white py-3 rounded-lg hover:bg-red-900 transition-colors font-semibold">
+                            Fund This Research
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Research Project 3 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                    <div class="h-48 bg-gradient-to-br from-purple-400 to-indigo-500 relative">
+                        <div class="absolute top-4 left-4">
+                            <span class="research-badge text-white px-3 py-1 rounded-full text-sm font-semibold">Technology</span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-white text-gray-700 px-2 py-1 rounded text-xs font-semibold">Harvard</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Quantum Computing Breakthrough</h3>
+                        <p class="text-gray-600 mb-4">Developing stable quantum processors that operate at room temperature for practical applications.</p>
+                        
+                        <div class="flex items-center mb-4">
+                            <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-xs font-bold text-purple-600">AL</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-sm">Dr. Alex Liu</p>
+                                <p class="text-xs text-gray-500">Quantum Physics</p>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-2xl font-bold text-red-800">$203,750</span>
+                            <span class="text-gray-500">of $300,000</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2 mb-4">
+                            <div class="bg-red-800 h-2 rounded-full" style="width: 68%"></div>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-500 mb-4">
+                            <span>342 backers</span>
+                            <span>12 days left</span>
+                        </div>
+                        <button class="w-full bg-red-800 text-white py-3 rounded-lg hover:bg-red-900 transition-colors font-semibold">
+                            Fund This Research
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <button class="bg-red-800 text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-900 transition-colors">
+                    View All Research Projects
+                </button>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- How It Works for Research -->
+    <section class="py-10 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">How Research Funding Works</h2>
+                <p class="text-xl text-gray-600">Simple steps to support groundbreaking research</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-red-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Discover Research</h3>
+                    <p class="text-gray-600">Browse verified research projects from leading universities and institutions worldwide.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Fund Research</h3>
+                    <p class="text-gray-600">Support projects that matter to you with flexible funding options and transparent progress tracking.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-red-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Track Impact</h3>
+                    <p class="text-gray-600">Receive regular updates, research publications, and see the real-world impact of your contribution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-red-800 text-white py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-6">Ready to Fund the Future?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+                Join thousands of supporters who are making groundbreaking research possible. Every contribution matters.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white text-red-800 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+                    Start Supporting Research
+                </button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-red-800 transition-colors">
+                    Submit Your Research
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-2xl font-bold text-red-400 mb-4">ASU ResearchFund</div>
+                    <p class="text-gray-400">Connecting ASU researchers with supporters to advance human knowledge and solve global challenges.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">For Researchers</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Submit Research</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Research Guidelines</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">For Supporters</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Browse Research</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">How It Works</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Impact Reports</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Community</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 ResearchFund. All rights reserved. Supporting academic research worldwide.</p>
+            </div>
+        </div>
+    </footer>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'983e8fb4305d1b4b',t:'MTc1ODY3Nzg5Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
