@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASU ResearchFund - Arizona State University Research Platform</title>
     <script src="https://cdn.tailwindcss.com"></script>
+          <link rel="stylesheet" href="./style.css">
+
+
     <style>
         .hero-gradient {
             background: linear-gradient(135deg, #8C1D40 0%, #FFC627 50%, #8C1D40 100%);
@@ -22,66 +25,8 @@
     </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Navigation -->
- <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <div class="text-2xl font-bold text-red-800"><a href="./landing-lage.html">ASU ResearchFund</a></div>
-                </div>
-                <div class="hidden md:flex items-center space-x-6">
-                    <a href="#explore" class="text-gray-700 hover:text-red-800 transition-colors">Explore Research</a>
-                    <a href="#categories" class="text-gray-700 hover:text-red-800 transition-colors">Categories</a>
-                    <a href="./list-of-reseachers.html" class="text-gray-700 hover:text-red-800 transition-colors">Researchers</a>
-                    <a href="#institutions" class="text-gray-700 hover:text-red-800 transition-colors">Institutions</a>
-                    <a href="#about" class="text-gray-700 hover:text-red-800 transition-colors">About</a>
-                    
-                                        <button class="bg-red-800 text-white px-4 py-2 rounded-lg hover:bg-red-900 transition-colors">Login</button>
-
-                    <button class="border border-red-800 text-red-800 px-4 py-2 rounded-lg hover:bg-red-800 hover:text-white transition-colors">Sign Up</button>
-                </div>
-                <div class="md:hidden">
-                    <button class="text-gray-700">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-                
-            </div>
-        </div>
-    </nav>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ResearchFund - Crowdfunding for Science & Innovation</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            box-sizing: border-box;
-        }
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        .card-hover {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-        .progress-bar {
-            transition: width 0.5s ease;
-        }
-    </style>
-</head>
-<body class="bg-white">
-    <!-- Header -->
-
-
-
+  <div id="navbar"></div>
+  <script src="navbar.js"></script>
     <!-- Hero Section -->
     <section class="hero-gradient text-white py-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -118,7 +63,7 @@
                                 <option>Engineering</option>
                             </select>
                         </div>
-                        <button class="bg-red-800 text-white px-8 py-3 rounded-lg hover:bg-red-900 transition-colors font-semibold">
+                        <button class="asu text-white px-8 py-3 rounded-lg hover:bg-red-900 transition-colors font-semibold">
                             Search
                         </button>
                     </div>
@@ -238,7 +183,7 @@
                     <p class="text-xl text-gray-600">Discover cutting-edge research that needs your support</p>
                 </div>
                 <div class="flex gap-2">
-                    <button class="px-4 py-2 bg-red-800 text-white rounded-lg hover:bg-red-900 transition-colors">All</button>
+                    <button class="px-4 py-2 asu text-white rounded-lg hover:bg-red-900 transition-colors">All</button>
                     <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">Trending</button>
                     <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">Ending Soon</button>
                 </div>
@@ -274,13 +219,13 @@
                             <span class="text-gray-500">of $150,000</span>
                         </div>
                         <div class="w-full bg-gray-200 rounded-full h-2 mb-4">
-                            <div class="bg-red-800 h-2 rounded-full" style="width: 85%"></div>
+                            <div class="asu h-2 rounded-full" style="width: 85%"></div>
                         </div>
                         <div class="flex justify-between text-sm text-gray-500 mb-4">
                             <span>234 backers</span>
                             <span>18 days left</span>
                         </div>
-                        <button class="w-full bg-red-800 text-white py-3 rounded-lg hover:bg-red-900 transition-colors font-semibold">
+                        <button class="w-full asu text-white py-3 rounded-lg hover:bg-red-900 transition-colors font-semibold">
                             Fund This Research
                         </button>
                     </div>
@@ -315,13 +260,13 @@
                             <span class="text-gray-500">of $120,000</span>
                         </div>
                         <div class="w-full bg-gray-200 rounded-full h-2 mb-4">
-                            <div class="bg-red-800 h-2 rounded-full" style="width: 74%"></div>
+                            <div class="asu h-2 rounded-full" style="width: 74%"></div>
                         </div>
                         <div class="flex justify-between text-sm text-gray-500 mb-4">
                             <span>189 backers</span>
                             <span>25 days left</span>
                         </div>
-                        <button class="w-full bg-red-800 text-white py-3 rounded-lg hover:bg-red-900 transition-colors font-semibold">
+                        <button class="w-full asu text-white py-3 rounded-lg hover:bg-red-900 transition-colors font-semibold">
                             Fund This Research
                         </button>
                     </div>
@@ -356,13 +301,13 @@
                             <span class="text-gray-500">of $300,000</span>
                         </div>
                         <div class="w-full bg-gray-200 rounded-full h-2 mb-4">
-                            <div class="bg-red-800 h-2 rounded-full" style="width: 68%"></div>
+                            <div class="asu h-2 rounded-full" style="width: 68%"></div>
                         </div>
                         <div class="flex justify-between text-sm text-gray-500 mb-4">
                             <span>342 backers</span>
                             <span>12 days left</span>
                         </div>
-                        <button class="w-full bg-red-800 text-white py-3 rounded-lg hover:bg-red-900 transition-colors font-semibold">
+                        <button class="w-full asu text-white py-3 rounded-lg hover:bg-red-900 transition-colors font-semibold">
                             Fund This Research
                         </button>
                     </div>
@@ -370,7 +315,7 @@
             </div>
 
             <div class="text-center mt-12">
-                <button class="bg-red-800 text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-900 transition-colors">
+                <button class="asu text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-900 transition-colors">
                     View All Research Projects
                 </button>
             </div>
@@ -422,7 +367,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="bg-red-800 text-white py-10">
+    <section class="asu text-white py-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-4xl font-bold mb-6">Ready to Fund the Future?</h2>
             <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
@@ -444,7 +389,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
-                    <div class="text-2xl font-bold text-red-400 mb-4">ASU ResearchFund</div>
+                    <div class="text-2xl font-bold bg-yellow-600 mb-4">ASU ResearchFund</div>
                     <p class="text-gray-400">Connecting ASU researchers with supporters to advance human knowledge and solve global challenges.</p>
                 </div>
                 <div>
