@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Showcase - ASU ResearchFund</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        .video-thumbnail {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            background: #000;
+            border-radius: 8px 8px 0 0;
+            overflow: hidden;
+        }
+        
+        .video-thumbnail video,
+        .video-thumbnail img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(140, 29, 64, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+        
+        .play-button:hover {
+            background: rgba(140, 29, 64, 1);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        
+        .play-button svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+            margin-left: 3px;
+        }
+        
+        .research-card {
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .research-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .modal-overlay.active {
+            display: flex;
+        }
+        
+        .video-modal {
+            background: #000;
+            border-radius: 8px;
+            max-width: 90vw;
+            max-height: 90vh;
+            width: 100%;
+            position: relative;
+        }
+        
+        .video-modal video {
+            width: 100%;
+            height: auto;
+            max-height: 90vh;
+            border-radius: 8px;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 32px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .close-modal:hover {
+            color: #ffc627;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <div id="navbar"></div>
+    <script src="navbar.js"></script>
+
+    <!-- Header Section -->
+    <section class="asu text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-2">Research Showcase</h1>
+                    <p class="text-xl opacity-90">Explore groundbreaking research with video demonstrations</p>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <div class="flex gap-2">
+                        <button onclick="filterByCategory('all', this)" class="filter-btn active px-4 py-2 bg-white bg-opacity-30 rounded-lg hover:bg-opacity-30 transition-colors">
+                            All
+                        </button>
+                        <button onclick="filterByCategory('medical', this)" class="filter-btn px-4 py-2 bg-white bg-opacity-20 rounded-lg hover:bg-opacity-30 transition-colors">
+                            Medical
+                        </button>
+                        <button onclick="filterByCategory('technology', this)" class="filter-btn px-4 py-2 bg-white bg-opacity-20 rounded-lg hover:bg-opacity-30 transition-colors">
+                            Technology
+                        </button>
+                        <button onclick="filterByCategory('environmental', this)" class="filter-btn px-4 py-2 bg-white bg-opacity-20 rounded-lg hover:bg-opacity-30 transition-colors">
+                            Environmental
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="bg-white border-b py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row gap-4">
+                <div class="flex-1">
+                    <input type="text" id="searchInput" placeholder="Search research projects, keywords, or researchers..." 
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-8c1d40 focus:border-transparent"
+                           onkeyup="filterResearch()">
+                </div>
+                <div class="md:w-48">
+                    <select id="sortSelect" onchange="sortResearch()" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-8c1d40 focus:border-transparent">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="views">Most Viewed</option>
+                        <option value="title">Title A-Z</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Grid -->
+    <section class="py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="researchCount" class="mb-6 text-gray-600">
+                Showing <span id="count">0</span> research projects
+            </div>
+            
+            <div id="researchGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Research cards will be dynamically generated -->
+            </div>
+            
+            <div id="noResults" class="hidden text-center py-12">
+                <svg class="w-24 h-24 mx-auto text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <p class="text-xl text-gray-500">No research projects found</p>
+                <p class="text-gray-400 mt-2">Try adjusting your search or filter criteria</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal-overlay">
+        <div class="video-modal">
+            <button class="close-modal" onclick="closeVideoModal()">&times;</button>
+            <video id="modalVideo" controls>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <script>
+        // Sample research data (in a real app, this would come from a backend API)
+        const researchData = [
+            {
+                id: 1,
+                title: "AI-Powered Cancer Detection System",
+                description: "Developing machine learning algorithms to detect early-stage cancer with 95% accuracy using medical imaging. This research focuses on improving diagnostic precision through advanced neural networks.",
+                category: "medical",
+                authors: [
+                    { name: "Dr. Rachel Kim", affiliation: "Arizona State University" }
+                ],
+                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+                thumbnail: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800",
+                duration: "8:02",
+                views: 1247,
+                date: "2025-01-15",
+                keywords: ["AI", "Cancer Detection", "Medical Imaging", "Machine Learning"]
+            },
+            {
+                id: 2,
+                title: "Ocean Plastic Cleanup Technology",
+                description: "Revolutionary biodegradable nets that capture microplastics while protecting marine life ecosystems. Our innovative approach addresses the global plastic pollution crisis.",
+                category: "environmental",
+                authors: [
+                    { name: "Prof. Maria Johnson", affiliation: "Arizona State University" }
+                ],
+                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+                thumbnail: "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=800",
+                duration: "9:32",
+                views: 892,
+                date: "2025-01-10",
+                keywords: ["Environmental", "Plastic Pollution", "Marine Biology", "Sustainability"]
+            },
+            {
+                id: 3,
+                title: "Quantum Computing Breakthrough",
+                description: "Developing stable quantum processors that operate at room temperature for practical applications. This breakthrough could revolutionize computing as we know it.",
+                category: "technology",
+                authors: [
+                    { name: "Dr. Alex Liu", affiliation: "Arizona State University" }
+                ],
+                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+                thumbnail: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800",
+                duration: "10:07",
+                views: 2156,
+                date: "2025-01-08",
+                keywords: ["Quantum Computing", "Physics", "Technology", "Innovation"]
+            },
+            {
+                id: 4,
+                title: "Live-cell Imaging of Endocytic Transport",
+                description: "Using functionalized nanobodies in cultured cells to visualize and understand endocytic transport mechanisms in real-time.",
+                category: "medical",
+                authors: [
+                    { name: "Dr. Dominik P. Buser", affiliation: "Arizona State University" }
+                ],
+                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+                thumbnail: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800",
+                duration: "6:43",
+                views: 726,
+                date: "2025-01-12",
+                keywords: ["Cell Biology", "Imaging", "Nanotechnology", "Biochemistry"]
+            },
+            {
+                id: 5,
+                title: "Protein-Glycan Interactions Analysis",
+                description: "Advances in Nuclear Magnetic Resonance techniques for exploring protein-glycan interactions with unprecedented detail and accuracy.",
+                category: "medical",
+                authors: [
+                    { name: "Dr. Fabio C. L. Almeida", affiliation: "Arizona State University" }
+                ],
+                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+                thumbnail: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800",
+                duration: "8:13",
+                views: 416,
+                date: "2025-01-05",
+                keywords: ["Biochemistry", "NMR", "Proteins", "Research Methods"]
+            },
+            {
+                id: 6,
+                title: "Mitochondrial Morphology Analysis",
+                description: "Understanding changes in mitochondrial morphology through dynamic and three-dimensional fluorescence micrographs for disease research.",
+                category: "medical",
+                authors: [
+                    { name: "Dr. Sholto de Wet", affiliation: "Arizona State University" }
+                ],
+                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+                thumbnail: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800",
+                duration: "7:26",
+                views: 641,
+                date: "2025-01-03",
+                keywords: ["Mitochondria", "Cell Biology", "Microscopy", "Disease Research"]
+            },
+            {
+                id: 7,
+                title: "Renewable Energy Storage Solutions",
+                description: "Developing efficient battery technologies for storing renewable energy, making sustainable power more accessible and reliable.",
+                category: "environmental",
+                authors: [
+                    { name: "Dr. Sarah Chen", affiliation: "Arizona State University" }
+                ],
+                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+                thumbnail: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800",
+                duration: "5:50",
+                views: 1028,
+                date: "2024-12-28",
+                keywords: ["Renewable Energy", "Batteries", "Sustainability", "Engineering"]
+            },
+            {
+                id: 8,
+                title: "Neural Network Optimization Algorithms",
+                description: "Novel optimization techniques for training deep neural networks faster and more efficiently, reducing computational costs significantly.",
+                category: "technology",
+                authors: [
+                    { name: "Dr. James Park", affiliation: "Arizona State University" }
+                ],
+                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+                thumbnail: "https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=800",
+                duration: "4:25",
+                views: 329,
+                date: "2024-12-25",
+                keywords: ["AI", "Machine Learning", "Neural Networks", "Algorithms"]
+            },
+            {
+                id: 9,
+                title: "Climate Change Impact on Coral Reefs",
+                description: "Comprehensive study on how rising ocean temperatures affect coral reef ecosystems and potential mitigation strategies.",
+                category: "environmental",
+                authors: [
+                    { name: "Dr. Emily Rodriguez", affiliation: "Arizona State University" }
+                ],
+                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
+                thumbnail: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800",
+                duration: "8:57",
+                views: 422,
+                date: "2024-12-20",
+                keywords: ["Climate Change", "Marine Biology", "Ecology", "Conservation"]
+            }
+        ];
+
+        let filteredData = [...researchData];
+        let currentCategory = 'all';
+
+        // Render research cards
+        function renderResearch(data) {
+            const grid = document.getElementById('researchGrid');
+            const count = document.getElementById('count');
+            const noResults = document.getElementById('noResults');
+            
+            count.textContent = data.length;
+            
+            if (data.length === 0) {
+                grid.innerHTML = '';
+                noResults.classList.remove('hidden');
+                return;
+            }
+            
+            noResults.classList.add('hidden');
+            
+            grid.innerHTML = data.map(research => `
+                <div class="research-card bg-white rounded-lg shadow-md overflow-hidden" data-category="${research.category}">
+                    <div class="video-thumbnail" onclick="openVideoModal('${research.videoUrl}', '${research.title}')">
+                        <img src="${research.thumbnail}" alt="${research.title}" onerror="this.src='https://via.placeholder.com/800x450?text=Video+Thumbnail'">
+                        <div class="play-button">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                        <div class="absolute bottom-2 right-2 bg-black bg-opacity-75 text-white text-xs px-2 py-1 rounded">
+                            ${research.duration}
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="category-badge ${getCategoryColor(research.category)}">
+                                ${research.category}
+                            </span>
+                            <span class="text-sm text-gray-500">
+                                <svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                </svg>
+                                ${formatNumber(research.views)}
+                            </span>
+                        </div>
+                        <a href="research-detail.html?id=${research.id}" class="block">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2 line-clamp-2 hover:text-8c1d40 transition-colors cursor-pointer">
+                                ${research.title}
+                            </h3>
+                        </a>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                            ${research.description}
+                        </p>
+                        <div class="border-t pt-3">
+                            <div class="flex items-center mb-2">
+                                <div>
+                                    <p class="text-sm font-semibold text-gray-900">${research.authors[0].name}</p>
+                                    <p class="text-xs text-gray-500">${research.authors[0].affiliation}</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-1 mt-2">
+                                ${research.keywords.slice(0, 3).map(keyword => `
+                                    <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">${keyword}</span>
+                                `).join('')}
+                            </div>
+                            <div class="mt-3 flex items-center justify-between">
+                                <span class="text-xs text-gray-500">${formatDate(research.date)}</span>
+                                <a href="research-detail.html?id=${research.id}" class="text-sm text-8c1d40 hover:text-red-900 font-semibold">
+                                    View Details →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function getCategoryColor(category) {
+            const colors = {
+                medical: 'bg-red-100 text-red-800',
+                technology: 'bg-blue-100 text-blue-800',
+                environmental: 'bg-green-100 text-green-800',
+                social: 'bg-purple-100 text-purple-800',
+                engineering: 'bg-orange-100 text-orange-800'
+            };
+            return colors[category] || 'bg-gray-100 text-gray-800';
+        }
+
+        function formatNumber(num) {
+            if (num >= 1000) {
+                return (num / 1000).toFixed(1) + 'K';
+            }
+            return num.toString();
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+        }
+
+        function openVideoModal(videoUrl, title) {
+            const modal = document.getElementById('videoModal');
+            const video = document.getElementById('modalVideo');
+            video.src = videoUrl;
+            video.load();
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('videoModal');
+            const video = document.getElementById('modalVideo');
+            video.pause();
+            video.src = '';
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function filterByCategory(category, button) {
+            currentCategory = category;
+            
+            // Update active button
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active', 'bg-opacity-30');
+                btn.classList.add('bg-opacity-20');
+            });
+            if (button) {
+                button.classList.add('active', 'bg-opacity-30');
+                button.classList.remove('bg-opacity-20');
+            }
+            
+            // Filter data
+            if (category === 'all') {
+                filteredData = [...researchData];
+            } else {
+                filteredData = researchData.filter(r => r.category === category);
+            }
+            
+            // Apply search filter if any
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            if (searchTerm) {
+                filteredData = filteredData.filter(r => 
+                    r.title.toLowerCase().includes(searchTerm) ||
+                    r.description.toLowerCase().includes(searchTerm) ||
+                    r.authors.some(a => a.name.toLowerCase().includes(searchTerm)) ||
+                    r.keywords.some(k => k.toLowerCase().includes(searchTerm))
+                );
+            }
+            
+            renderResearch(filteredData);
+        }
+
+        function filterResearch() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            
+            let data = currentCategory === 'all' ? [...researchData] : researchData.filter(r => r.category === currentCategory);
+            
+            if (searchTerm) {
+                data = data.filter(r => 
+                    r.title.toLowerCase().includes(searchTerm) ||
+                    r.description.toLowerCase().includes(searchTerm) ||
+                    r.authors.some(a => a.name.toLowerCase().includes(searchTerm)) ||
+                    r.keywords.some(k => k.toLowerCase().includes(searchTerm))
+                );
+            }
+            
+            filteredData = data;
+            renderResearch(filteredData);
+        }
+
+        function sortResearch() {
+            const sortBy = document.getElementById('sortSelect').value;
+            
+            filteredData.sort((a, b) => {
+                switch(sortBy) {
+                    case 'newest':
+                        return new Date(b.date) - new Date(a.date);
+                    case 'oldest':
+                        return new Date(a.date) - new Date(b.date);
+                    case 'views':
+                        return b.views - a.views;
+                    case 'title':
+                        return a.title.localeCompare(b.title);
+                    default:
+                        return 0;
+                }
+            });
+            
+            renderResearch(filteredData);
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeVideoModal();
+            }
+        });
+
+        // Close modal when clicking outside video
+        document.getElementById('videoModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeVideoModal();
+            }
+        });
+
+        // Initialize
+        renderResearch(researchData);
+    </script>
+</body>
+</html>
