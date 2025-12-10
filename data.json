@@ -1,0 +1,288 @@
+{
+  "professors": [
+    {
+      "id": 1,
+      "name": "Dr. Rachel Kim",
+      "email": "rkim@asu.edu",
+      "affiliation": "Arizona State University",
+      "department": "Biomedical Engineering",
+      "title": "Associate Professor",
+      "bio": "Dr. Rachel Kim specializes in AI-powered medical imaging and machine learning applications in healthcare. Her research focuses on developing advanced diagnostic systems for early disease detection.",
+      "researchAreas": ["AI", "Medical Imaging", "Machine Learning", "Cancer Detection"],
+      "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400"
+    },
+    {
+      "id": 2,
+      "name": "Prof. Maria Johnson",
+      "email": "mjohnson@asu.edu",
+      "affiliation": "Arizona State University",
+      "department": "Environmental Engineering",
+      "title": "Professor",
+      "bio": "Prof. Maria Johnson is a leading expert in environmental sustainability and marine conservation. Her work focuses on innovative solutions for ocean pollution and ecosystem protection.",
+      "researchAreas": ["Environmental Science", "Marine Biology", "Sustainability", "Plastic Pollution"],
+      "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400"
+    },
+    {
+      "id": 3,
+      "name": "Dr. Alex Liu",
+      "email": "aliu@asu.edu",
+      "affiliation": "Arizona State University",
+      "department": "Physics",
+      "title": "Associate Professor",
+      "bio": "Dr. Alex Liu is a quantum computing researcher working on developing practical quantum processors for real-world applications.",
+      "researchAreas": ["Quantum Computing", "Physics", "Technology", "Quantum Mechanics"],
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400"
+    },
+    {
+      "id": 4,
+      "name": "Dr. Dominik P. Buser",
+      "email": "dbuser@asu.edu",
+      "affiliation": "Arizona State University",
+      "department": "Cell Biology",
+      "title": "Assistant Professor",
+      "bio": "Dr. Buser's research focuses on live-cell imaging and understanding cellular transport mechanisms using advanced microscopy techniques.",
+      "researchAreas": ["Cell Biology", "Imaging", "Nanotechnology", "Biochemistry"],
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400"
+    },
+    {
+      "id": 5,
+      "name": "Dr. Fabio C. L. Almeida",
+      "email": "falmeida@asu.edu",
+      "affiliation": "Arizona State University",
+      "department": "Biochemistry",
+      "title": "Associate Professor",
+      "bio": "Dr. Almeida specializes in protein-glycan interactions and advanced NMR techniques for structural biology research.",
+      "researchAreas": ["Biochemistry", "NMR", "Proteins", "Research Methods"],
+      "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400"
+    },
+    {
+      "id": 6,
+      "name": "Dr. Sholto de Wet",
+      "email": "sdewet@asu.edu",
+      "affiliation": "Arizona State University",
+      "department": "Cell Biology",
+      "title": "Assistant Professor",
+      "bio": "Dr. de Wet's research focuses on mitochondrial morphology and its role in disease mechanisms using advanced fluorescence microscopy.",
+      "researchAreas": ["Mitochondria", "Cell Biology", "Microscopy", "Disease Research"],
+      "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400"
+    },
+    {
+      "id": 7,
+      "name": "Dr. Sarah Chen",
+      "email": "schen@asu.edu",
+      "affiliation": "Arizona State University",
+      "department": "Engineering",
+      "title": "Associate Professor",
+      "bio": "Dr. Chen specializes in renewable energy storage solutions and battery technology development for sustainable power systems.",
+      "researchAreas": ["Renewable Energy", "Batteries", "Sustainability", "Engineering"],
+      "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400"
+    },
+    {
+      "id": 8,
+      "name": "Dr. James Park",
+      "email": "jpark@asu.edu",
+      "affiliation": "Arizona State University",
+      "department": "Computer Science",
+      "title": "Assistant Professor",
+      "bio": "Dr. Park's research focuses on neural network optimization and machine learning algorithms for efficient AI systems.",
+      "researchAreas": ["AI", "Machine Learning", "Neural Networks", "Algorithms"],
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400"
+    },
+    {
+      "id": 9,
+      "name": "Dr. Emily Rodriguez",
+      "email": "erodriguez@asu.edu",
+      "affiliation": "Arizona State University",
+      "department": "Environmental Science",
+      "title": "Associate Professor",
+      "bio": "Dr. Rodriguez studies climate change impacts on marine ecosystems and develops strategies for coral reef conservation.",
+      "researchAreas": ["Climate Change", "Marine Biology", "Ecology", "Conservation"],
+      "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400"
+    },
+    {
+      "id": 10,
+      "name": "Dr. Michael Chen",
+      "email": "mchen@asu.edu",
+      "affiliation": "Arizona State University",
+      "department": "Biomedical Engineering",
+      "title": "Assistant Professor",
+      "bio": "Dr. Chen collaborates on AI and machine learning projects for medical applications.",
+      "researchAreas": ["AI", "Machine Learning", "Medical Imaging"],
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400"
+    },
+    {
+      "id": 11,
+      "name": "Dr. Priya Patel",
+      "email": "ppatel@asu.edu",
+      "affiliation": "Arizona State University",
+      "department": "Physics",
+      "title": "Assistant Professor",
+      "bio": "Dr. Patel works on quantum computing systems and error correction algorithms.",
+      "researchAreas": ["Quantum Computing", "Physics", "Algorithms"],
+      "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400"
+    }
+  ],
+  "researchProjects": [
+    {
+      "id": 1,
+      "title": "AI-Powered Cancer Detection System",
+      "description": "Developing machine learning algorithms to detect early-stage cancer with 95% accuracy using medical imaging. This research focuses on improving diagnostic precision through advanced neural networks.",
+      "abstract": "Early detection of cancer significantly improves patient outcomes, yet current diagnostic methods often lack the precision needed for optimal treatment planning. This research presents a novel AI-powered system that leverages deep learning algorithms to analyze medical imaging data with unprecedented accuracy. Our approach utilizes convolutional neural networks (CNNs) trained on extensive datasets of histopathological images, radiological scans, and clinical data. The system achieves 95% accuracy in detecting early-stage malignancies across multiple cancer types, including breast, lung, and colorectal cancers. Through transfer learning and data augmentation techniques, we've developed a robust model that generalizes well across diverse patient populations and imaging modalities. The system not only identifies potential malignancies but also provides detailed localization and confidence scores, aiding clinicians in making informed diagnostic decisions. Our research demonstrates the potential of AI to revolutionize cancer diagnostics, potentially saving thousands of lives through earlier intervention.",
+      "category": "medical",
+      "authorIds": [1, 10],
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "thumbnail": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800",
+      "duration": "8:02",
+      "views": 1247,
+      "date": "2025-01-15",
+      "keywords": ["AI", "Cancer Detection", "Medical Imaging", "Machine Learning", "Deep Learning", "Neural Networks"],
+      "funding": {
+        "amount": 250000,
+        "duration": 24,
+        "status": "Active",
+        "source": "National Institutes of Health"
+      },
+      "methodology": "We employed a multi-stage approach combining data preprocessing, feature extraction, and deep learning classification. Our dataset comprised over 50,000 annotated medical images from multiple institutions. We used transfer learning with pre-trained ResNet-50 and Inception-v3 architectures, fine-tuning them on our specific dataset. Data augmentation techniques including rotation, scaling, and color jittering were applied to improve model generalization.",
+      "results": "The developed system achieved 95% accuracy, 93% sensitivity, and 97% specificity in cancer detection. The model successfully identified early-stage malignancies that were initially missed by traditional screening methods in 12% of test cases. Processing time per image was reduced to under 2 seconds, making it suitable for clinical deployment.",
+      "impact": "This research has the potential to revolutionize cancer diagnostics by enabling earlier detection and more accurate diagnosis. The system could be integrated into existing medical imaging workflows, providing real-time assistance to radiologists and pathologists. Early detection could lead to improved patient outcomes and reduced healthcare costs.",
+      "relatedFiles": [
+        { "name": "Full Research Paper", "type": "PDF", "size": "2.5 MB" },
+        { "name": "Supplementary Materials", "type": "ZIP", "size": "15.3 MB" },
+        { "name": "Dataset", "type": "CSV", "size": "8.7 MB" }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Ocean Plastic Cleanup Technology",
+      "description": "Revolutionary biodegradable nets that capture microplastics while protecting marine life ecosystems. Our innovative approach addresses the global plastic pollution crisis.",
+      "abstract": "Ocean plastic pollution has reached critical levels, with millions of tons of plastic waste entering marine ecosystems annually. Traditional cleanup methods often harm marine life or are ineffective at capturing microplastics. This research introduces a novel biodegradable netting system designed to selectively capture plastic waste while allowing marine organisms to pass through safely. The nets are constructed from a proprietary biodegradable polymer that degrades harmlessly in marine environments over 18-24 months. Our design incorporates size-selective mesh patterns and bio-inspired filtration mechanisms that target plastic particles while minimizing bycatch. Field testing in the Pacific Garbage Patch demonstrated 85% plastic capture efficiency with less than 2% marine life entanglement. The system is designed for deployment from vessels or autonomous platforms, with each unit capable of processing 500 kg of plastic waste per day. This technology represents a significant advancement in ocean cleanup efforts, offering a sustainable and environmentally responsible solution to marine plastic pollution.",
+      "category": "environmental",
+      "authorIds": [2],
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+      "thumbnail": "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=800",
+      "duration": "9:32",
+      "views": 892,
+      "date": "2025-01-10",
+      "keywords": ["Environmental", "Plastic Pollution", "Marine Biology", "Sustainability", "Biodegradable Materials"],
+      "funding": {
+        "amount": 180000,
+        "duration": 18,
+        "status": "Active",
+        "source": "Environmental Protection Agency"
+      },
+      "methodology": "We developed and tested multiple biodegradable polymer formulations in controlled marine environments. The netting design was optimized through computational fluid dynamics simulations and physical testing in wave tanks. Field trials were conducted in collaboration with marine conservation organizations, using standardized protocols for measuring capture efficiency and environmental impact.",
+      "results": "The biodegradable nets achieved 85% plastic capture efficiency with minimal environmental impact. Marine life entanglement was reduced by 98% compared to traditional nets. The biodegradable polymer degraded completely within 24 months without releasing harmful byproducts. Cost analysis showed 40% reduction in cleanup costs compared to existing methods.",
+      "impact": "This technology could significantly accelerate ocean cleanup efforts while protecting marine ecosystems. If deployed at scale, it could remove millions of tons of plastic waste from oceans annually. The biodegradable design addresses concerns about cleanup equipment becoming additional waste, making it a truly sustainable solution.",
+      "relatedFiles": [
+        { "name": "Research Paper", "type": "PDF", "size": "3.1 MB" },
+        { "name": "Field Test Data", "type": "XLSX", "size": "5.2 MB" }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Quantum Computing Breakthrough",
+      "description": "Developing stable quantum processors that operate at room temperature for practical applications. This breakthrough could revolutionize computing as we know it.",
+      "abstract": "Quantum computing promises to solve problems intractable for classical computers, but current systems require extreme cooling to near absolute zero, limiting practical applications. This research presents a breakthrough in quantum processor design that enables stable operation at room temperature. We've developed a novel qubit architecture using nitrogen-vacancy centers in diamond, combined with advanced error correction algorithms and quantum control techniques. Our system maintains quantum coherence for over 100 microseconds at 300K, a 1000-fold improvement over previous room-temperature quantum systems. The processor demonstrates quantum advantage in solving optimization problems and simulating molecular systems. This advancement eliminates the need for expensive cryogenic cooling systems, making quantum computing accessible for a wider range of applications including drug discovery, financial modeling, and artificial intelligence.",
+      "category": "technology",
+      "authorIds": [3, 11],
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+      "thumbnail": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800",
+      "duration": "10:07",
+      "views": 2156,
+      "date": "2025-01-08",
+      "keywords": ["Quantum Computing", "Physics", "Technology", "Innovation", "Quantum Mechanics"],
+      "funding": {
+        "amount": 500000,
+        "duration": 36,
+        "status": "Active",
+        "source": "National Science Foundation"
+      },
+      "methodology": "We utilized nitrogen-vacancy (NV) centers in diamond as qubits, which naturally operate at room temperature. Advanced microwave control sequences and dynamic decoupling techniques were employed to extend coherence times. Error correction was implemented using surface code protocols adapted for NV center systems. Quantum algorithms were tested using a 20-qubit prototype processor.",
+      "results": "Achieved 100+ microsecond coherence times at room temperature, enabling execution of complex quantum algorithms. Demonstrated quantum advantage in solving optimization problems with 50 qubits. Successfully simulated molecular systems with accuracy exceeding classical methods. System stability maintained for continuous 8-hour operation periods.",
+      "impact": "This breakthrough makes quantum computing practical for real-world applications without expensive cooling infrastructure. Potential applications include drug discovery, cryptography, financial modeling, and AI acceleration. The technology could enable quantum computing centers at universities and research institutions worldwide.",
+      "relatedFiles": [
+        { "name": "Research Publication", "type": "PDF", "size": "4.2 MB" },
+        { "name": "Technical Specifications", "type": "PDF", "size": "1.8 MB" },
+        { "name": "Quantum Algorithm Code", "type": "ZIP", "size": "12.5 MB" }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Live-cell Imaging of Endocytic Transport",
+      "description": "Using functionalized nanobodies in cultured cells to visualize and understand endocytic transport mechanisms in real-time.",
+      "category": "medical",
+      "authorIds": [4],
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+      "thumbnail": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800",
+      "duration": "6:43",
+      "views": 726,
+      "date": "2025-01-12",
+      "keywords": ["Cell Biology", "Imaging", "Nanotechnology", "Biochemistry"]
+    },
+    {
+      "id": 5,
+      "title": "Protein-Glycan Interactions Analysis",
+      "description": "Advances in Nuclear Magnetic Resonance techniques for exploring protein-glycan interactions with unprecedented detail and accuracy.",
+      "category": "medical",
+      "authorIds": [5],
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+      "thumbnail": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800",
+      "duration": "8:13",
+      "views": 416,
+      "date": "2025-01-05",
+      "keywords": ["Biochemistry", "NMR", "Proteins", "Research Methods"]
+    },
+    {
+      "id": 6,
+      "title": "Mitochondrial Morphology Analysis",
+      "description": "Understanding changes in mitochondrial morphology through dynamic and three-dimensional fluorescence micrographs for disease research.",
+      "category": "medical",
+      "authorIds": [6],
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+      "thumbnail": "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800",
+      "duration": "7:26",
+      "views": 641,
+      "date": "2025-01-03",
+      "keywords": ["Mitochondria", "Cell Biology", "Microscopy", "Disease Research"]
+    },
+    {
+      "id": 7,
+      "title": "Renewable Energy Storage Solutions",
+      "description": "Developing efficient battery technologies for storing renewable energy, making sustainable power more accessible and reliable.",
+      "category": "environmental",
+      "authorIds": [7],
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+      "thumbnail": "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800",
+      "duration": "5:50",
+      "views": 1028,
+      "date": "2024-12-28",
+      "keywords": ["Renewable Energy", "Batteries", "Sustainability", "Engineering"]
+    },
+    {
+      "id": 8,
+      "title": "Neural Network Optimization Algorithms",
+      "description": "Novel optimization techniques for training deep neural networks faster and more efficiently, reducing computational costs significantly.",
+      "category": "technology",
+      "authorIds": [8],
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+      "thumbnail": "https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=800",
+      "duration": "4:25",
+      "views": 329,
+      "date": "2024-12-25",
+      "keywords": ["AI", "Machine Learning", "Neural Networks", "Algorithms"]
+    },
+    {
+      "id": 9,
+      "title": "Climate Change Impact on Coral Reefs",
+      "description": "Comprehensive study on how rising ocean temperatures affect coral reef ecosystems and potential mitigation strategies.",
+      "category": "environmental",
+      "authorIds": [9],
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
+      "thumbnail": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800",
+      "duration": "8:57",
+      "views": 422,
+      "date": "2024-12-20",
+      "keywords": ["Climate Change", "Marine Biology", "Ecology", "Conservation"]
+    }
+  ]
+}

@@ -217,146 +217,42 @@
 
     <script>
         // Sample research data (in a real app, this would come from a backend API)
-        const researchData = [
-            {
-                id: 1,
-                title: "AI-Powered Cancer Detection System",
-                description: "Developing machine learning algorithms to detect early-stage cancer with 95% accuracy using medical imaging. This research focuses on improving diagnostic precision through advanced neural networks.",
-                category: "medical",
-                authors: [
-                    { name: "Dr. Rachel Kim", affiliation: "Arizona State University" }
-                ],
-                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-                thumbnail: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800",
-                duration: "8:02",
-                views: 1247,
-                date: "2025-01-15",
-                keywords: ["AI", "Cancer Detection", "Medical Imaging", "Machine Learning"]
-            },
-            {
-                id: 2,
-                title: "Ocean Plastic Cleanup Technology",
-                description: "Revolutionary biodegradable nets that capture microplastics while protecting marine life ecosystems. Our innovative approach addresses the global plastic pollution crisis.",
-                category: "environmental",
-                authors: [
-                    { name: "Prof. Maria Johnson", affiliation: "Arizona State University" }
-                ],
-                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-                thumbnail: "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=800",
-                duration: "9:32",
-                views: 892,
-                date: "2025-01-10",
-                keywords: ["Environmental", "Plastic Pollution", "Marine Biology", "Sustainability"]
-            },
-            {
-                id: 3,
-                title: "Quantum Computing Breakthrough",
-                description: "Developing stable quantum processors that operate at room temperature for practical applications. This breakthrough could revolutionize computing as we know it.",
-                category: "technology",
-                authors: [
-                    { name: "Dr. Alex Liu", affiliation: "Arizona State University" }
-                ],
-                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-                thumbnail: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800",
-                duration: "10:07",
-                views: 2156,
-                date: "2025-01-08",
-                keywords: ["Quantum Computing", "Physics", "Technology", "Innovation"]
-            },
-            {
-                id: 4,
-                title: "Live-cell Imaging of Endocytic Transport",
-                description: "Using functionalized nanobodies in cultured cells to visualize and understand endocytic transport mechanisms in real-time.",
-                category: "medical",
-                authors: [
-                    { name: "Dr. Dominik P. Buser", affiliation: "Arizona State University" }
-                ],
-                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-                thumbnail: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800",
-                duration: "6:43",
-                views: 726,
-                date: "2025-01-12",
-                keywords: ["Cell Biology", "Imaging", "Nanotechnology", "Biochemistry"]
-            },
-            {
-                id: 5,
-                title: "Protein-Glycan Interactions Analysis",
-                description: "Advances in Nuclear Magnetic Resonance techniques for exploring protein-glycan interactions with unprecedented detail and accuracy.",
-                category: "medical",
-                authors: [
-                    { name: "Dr. Fabio C. L. Almeida", affiliation: "Arizona State University" }
-                ],
-                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-                thumbnail: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800",
-                duration: "8:13",
-                views: 416,
-                date: "2025-01-05",
-                keywords: ["Biochemistry", "NMR", "Proteins", "Research Methods"]
-            },
-            {
-                id: 6,
-                title: "Mitochondrial Morphology Analysis",
-                description: "Understanding changes in mitochondrial morphology through dynamic and three-dimensional fluorescence micrographs for disease research.",
-                category: "medical",
-                authors: [
-                    { name: "Dr. Sholto de Wet", affiliation: "Arizona State University" }
-                ],
-                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
-                thumbnail: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800",
-                duration: "7:26",
-                views: 641,
-                date: "2025-01-03",
-                keywords: ["Mitochondria", "Cell Biology", "Microscopy", "Disease Research"]
-            },
-            {
-                id: 7,
-                title: "Renewable Energy Storage Solutions",
-                description: "Developing efficient battery technologies for storing renewable energy, making sustainable power more accessible and reliable.",
-                category: "environmental",
-                authors: [
-                    { name: "Dr. Sarah Chen", affiliation: "Arizona State University" }
-                ],
-                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
-                thumbnail: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800",
-                duration: "5:50",
-                views: 1028,
-                date: "2024-12-28",
-                keywords: ["Renewable Energy", "Batteries", "Sustainability", "Engineering"]
-            },
-            {
-                id: 8,
-                title: "Neural Network Optimization Algorithms",
-                description: "Novel optimization techniques for training deep neural networks faster and more efficiently, reducing computational costs significantly.",
-                category: "technology",
-                authors: [
-                    { name: "Dr. James Park", affiliation: "Arizona State University" }
-                ],
-                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
-                thumbnail: "https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=800",
-                duration: "4:25",
-                views: 329,
-                date: "2024-12-25",
-                keywords: ["AI", "Machine Learning", "Neural Networks", "Algorithms"]
-            },
-            {
-                id: 9,
-                title: "Climate Change Impact on Coral Reefs",
-                description: "Comprehensive study on how rising ocean temperatures affect coral reef ecosystems and potential mitigation strategies.",
-                category: "environmental",
-                authors: [
-                    { name: "Dr. Emily Rodriguez", affiliation: "Arizona State University" }
-                ],
-                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
-                thumbnail: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800",
-                duration: "8:57",
-                views: 422,
-                date: "2024-12-20",
-                keywords: ["Climate Change", "Marine Biology", "Ecology", "Conservation"]
-            }
-        ];
-
-        let filteredData = [...researchData];
+        // Global data storage
+        let allData = null;
+        let professors = [];
+        let researchData = [];
+        let filteredData = [];
         let currentCategory = 'all';
+
+        // Load data from JSON file
+        async function loadData() {
+            try {
+                const response = await fetch('./data.json');
+                allData = await response.json();
+                professors = allData.professors;
+                researchData = allData.researchProjects.map(project => {
+                    // Map authorIds to author objects
+                    const authors = project.authorIds.map(id => {
+                        const prof = professors.find(p => p.id === id);
+                        return {
+                            name: prof ? prof.name : 'Unknown',
+                            affiliation: prof ? prof.affiliation : 'Arizona State University',
+                            email: prof ? prof.email : '',
+                            role: project.authorIds.indexOf(id) === 0 ? 'Principal Investigator' : 'Co-Investigator'
+                        };
+                    });
+                    return {
+                        ...project,
+                        authors: authors
+                    };
+                });
+                filteredData = [...researchData];
+                renderResearch(researchData);
+            } catch (error) {
+                console.error('Error loading data:', error);
+                document.getElementById('researchGrid').innerHTML = '<p class="text-center text-red-600">Error loading research data. Please refresh the page.</p>';
+            }
+        }
 
         // Render research cards
         function renderResearch(data) {
@@ -560,8 +456,8 @@
             }
         });
 
-        // Initialize
-        renderResearch(researchData);
+        // Initialize - Load data from JSON
+        loadData();
     </script>
 </body>
 </html>
