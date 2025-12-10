@@ -20,6 +20,14 @@
             background-color: maroon;
             color: white;
         }
+        .category-badge {
+        display: inline-block;
+        padding: 5px 16px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 550;
+        /* text-transform: uppercase; */
+      }
     </style>
 </head>
 <body class="bg-gray-50 min-h-full">
@@ -52,312 +60,31 @@
 
                 <!-- Role Filters -->
                 <div class="flex gap-2">
-                    <button class="filter-button active px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium hover:bg-red" 
-                            onclick="filterByRole('all')">All (24)</button>
-                    <button class="filter-button px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium hover:bg-red" 
-                            onclick="filterByRole('pi')">Principal Investigators (12)</button>
-                    <button class="filter-button px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium hover:bg-red" 
-                            onclick="filterByRole('consultant')">Consultants (8)</button>
-                    <button class="filter-button px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium hover:bg-red" 
-                            onclick="filterByRole('researcher')">Researchers (4)</button>
+                    <button class="filter-button active px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium hover:bg-red" data-role="all" data-label="All"
+                            onclick="filterByRole('all', this)">All</button>
+                    <button class="filter-button px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium hover:bg-red" data-role="pi" data-label="Principal Investigators"
+                            onclick="filterByRole('pi', this)">Principal Investigators</button>
+                    <button class="filter-button px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium hover:bg-red" data-role="consultant" data-label="Consultants"
+                            onclick="filterByRole('consultant', this)">Consultants</button>
+                    <button class="filter-button px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium hover:bg-red" data-role="researcher" data-label="Researchers"
+                            onclick="filterByRole('researcher', this)">Researchers</button>
                 </div>
             </div>
 
             <!-- Specialty Filters -->
             <div class="mt-4 flex flex-wrap gap-2">
                 <span class="text-sm text-gray-600 mr-2">Filter by specialty:</span>
-                <button class="specialty-filter px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs hover:bg-blue-200" onclick="filterBySpecialty('machine-learning')">Machine Learning</button>
-                <button class="specialty-filter px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs hover:bg-green-200" onclick="filterBySpecialty('genomics')">Genomics</button>
-                <button class="specialty-filter px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs hover:bg-purple-200" onclick="filterBySpecialty('neuroscience')">Neuroscience</button>
-                <button class="specialty-filter px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-xs hover:bg-orange-200" onclick="filterBySpecialty('drug-discovery')">Drug Discovery</button>
-                <button class="specialty-filter px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs hover:bg-red-200" onclick="filterBySpecialty('cancer-research')">Cancer Research</button>
-                <button class="specialty-filter px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs hover:bg-indigo-200" onclick="filterBySpecialty('immunology')">Immunology</button>
+                <button class="specialty-filter px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs hover:bg-blue-200" onclick="filterBySpecialty('machine-learning', this)">Machine Learning</button>
+                <button class="specialty-filter px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs hover:bg-yellow-200" onclick="filterBySpecialty('physics', this)">Physics</button>
+                <button class="specialty-filter px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs hover:bg-purple-200" onclick="filterBySpecialty('biochemistry', this)">Biochemistry</button>
+                <button class="specialty-filter px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-xs hover:bg-orange-200" onclick="filterBySpecialty('engineering', this)">Engineering</button>
+                <button class="specialty-filter px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs hover:bg-red-200" onclick="filterBySpecialty('AI', this)">AI</button>
+                <button class="specialty-filter px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs hover:bg-green-200" onclick="filterBySpecialty('cell-biology', this)">Cell Biology</button>
             </div>
         </div>
 
         <!-- Researchers Grid -->
-        <div id="researchersGrid" class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            <!-- Researcher Card 1 -->
-            <div class="researcher-card bg-white rounded-xl shadow-sm p-6 border border-gray-200" data-role="pi" data-specialty="machine-learning genomics">
-                <div class="flex items-center mb-4">
-                    <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-white text-xl font-bold mr-4">
-                        SC
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg text-gray-900">Dr. Sarah Chen</h3>
-                        <p class="text-blue-600 text-sm font-medium">Principal Investigator</p>
-                        <p class="text-gray-500 text-xs">Stanford University</p>
-                    </div>
-                </div>
-                
-                <div class="mb-4">
-                    <div class="flex flex-wrap gap-1 mb-2">
-                        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Machine Learning</span>
-                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Genomics</span>
-                    </div>
-                    <p class="text-gray-600 text-sm">Computational biology and AI-driven drug discovery specialist.</p>
-                </div>
-
-                <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
-                    <span>15 Projects</span>
-                    <span>$2.3M Raised</span>
-                    <span>85% Success</span>
-                </div>
- <a href="./researcher-profile.html">
-                <button class="w-full asu text-white py-2 rounded-lg hover:bg-red-900 text-sm font-medium">
-                    View Profile
-                   
-                </button>
-                </a>
-            </div>
-
-            <!-- Researcher Card 2 -->
-            <div class="researcher-card bg-white rounded-xl shadow-sm p-6 border border-gray-200" data-role="consultant" data-specialty="neuroscience drug-discovery">
-                <div class="flex items-center mb-4">
-                    <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center text-white text-xl font-bold mr-4">
-                        MJ
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg text-gray-900">Dr. Michael Johnson</h3>
-                        <p class="text-green-600 text-sm font-medium">Research Consultant</p>
-                        <p class="text-gray-500 text-xs">Harvard Medical School</p>
-                    </div>
-                </div>
-                
-                <div class="mb-4">
-                    <div class="flex flex-wrap gap-1 mb-2">
-                        <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Neuroscience</span>
-                        <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">Drug Discovery</span>
-                    </div>
-                    <p class="text-gray-600 text-sm">Neurological disorders and therapeutic development expert.</p>
-                </div>
-
-                <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
-                    <span>8 Projects</span>
-                    <span>$1.2M Raised</span>
-                    <span>92% Success</span>
-                </div>
-
-                  <a href="./researcher-profile.html">
-                <button class="w-full asu text-white py-2 rounded-lg hover:bg-red-900 text-sm font-medium">
-                    View Profile
-                   
-                </button>
-                </a>
-            </div>
-
-            <!-- Researcher Card 3 -->
-            <div class="researcher-card bg-white rounded-xl shadow-sm p-6 border border-gray-200" data-role="pi" data-specialty="cancer-research immunology">
-                <div class="flex items-center mb-4">
-                    <div class="w-16 h-16 bg-gradient-to-br from-red-400 to-pink-500 rounded-full flex items-center justify-center text-white text-xl font-bold mr-4">
-                        EP
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg text-gray-900">Dr. Emily Parker</h3>
-                        <p class="text-blue-600 text-sm font-medium">Principal Investigator</p>
-                        <p class="text-gray-500 text-xs">MIT</p>
-                    </div>
-                </div>
-                
-                <div class="mb-4">
-                    <div class="flex flex-wrap gap-1 mb-2">
-                        <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">Cancer Research</span>
-                        <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Immunology</span>
-                    </div>
-                    <p class="text-gray-600 text-sm">Cancer immunotherapy and precision oncology researcher.</p>
-                </div>
-
-                <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
-                    <span>12 Projects</span>
-                    <span>$1.8M Raised</span>
-                    <span>88% Success</span>
-                </div>
- <a href="./researcher-profile.html">
-                <button class="w-full asu text-white py-2 rounded-lg hover:bg-red-900 text-sm font-medium">
-                    View Profile
-                   
-                </button>
-                </a>
-            </div>
-
-            <!-- Researcher Card 4 -->
-            <div class="researcher-card bg-white rounded-xl shadow-sm p-6 border border-gray-200" data-role="researcher" data-specialty="genomics machine-learning">
-                <div class="flex items-center mb-4">
-                    <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-white text-xl font-bold mr-4">
-                        DL
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg text-gray-900">Dr. David Liu</h3>
-                        <p class="text-gray-600 text-sm font-medium">Senior Researcher</p>
-                        <p class="text-gray-500 text-xs">UCSF</p>
-                    </div>
-                </div>
-                
-                <div class="mb-4">
-                    <div class="flex flex-wrap gap-1 mb-2">
-                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Genomics</span>
-                        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Machine Learning</span>
-                    </div>
-                    <p class="text-gray-600 text-sm">Genetic engineering and CRISPR technology specialist.</p>
-                </div>
-
-                <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
-                    <span>6 Projects</span>
-                    <span>$950K Raised</span>
-                    <span>90% Success</span>
-                </div>
-
-                 <a href="./researcher-profile.html">
-                <button class="w-full asu text-white py-2 rounded-lg hover:bg-red-900 text-sm font-medium">
-                    View Profile
-                   
-                </button>
-                </a>
-            </div>
-
-            <!-- Researcher Card 5 -->
-            <div class="researcher-card bg-white rounded-xl shadow-sm p-6 border border-gray-200" data-role="consultant" data-specialty="drug-discovery machine-learning">
-                <div class="flex items-center mb-4">
-                    <div class="w-16 h-16 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-full flex items-center justify-center text-white text-xl font-bold mr-4">
-                        AR
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg text-gray-900">Dr. Anna Rodriguez</h3>
-                        <p class="text-green-600 text-sm font-medium">Research Consultant</p>
-                        <p class="text-gray-500 text-xs">Johns Hopkins</p>
-                    </div>
-                </div>
-                
-                <div class="mb-4">
-                    <div class="flex flex-wrap gap-1 mb-2">
-                        <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">Drug Discovery</span>
-                        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Machine Learning</span>
-                    </div>
-                    <p class="text-gray-600 text-sm">Pharmaceutical AI and computational chemistry expert.</p>
-                </div>
-
-                <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
-                    <span>10 Projects</span>
-                    <span>$1.5M Raised</span>
-                    <span>94% Success</span>
-                </div>
- <a href="./researcher-profile.html">
-                <button class="w-full asu text-white py-2 rounded-lg hover:bg-red-900 text-sm font-medium">
-                    View Profile
-                   
-                </button>
-                </a>
-            </div>
-
-            <!-- Researcher Card 6 -->
-            <div class="researcher-card bg-white rounded-xl shadow-sm p-6 border border-gray-200" data-role="consultant" data-specialty="drug-discovery machine-learning">
-                <div class="flex items-center mb-4">
-                    <div class="w-16 h-16 bg-gradient-to-br from-teal-400 to-green-500 rounded-full flex items-center justify-center text-white text-xl font-bold mr-4">
-                        JW
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg text-gray-900">Dr. James Wilson</h3>
-                        <p class="text-blue-600 text-sm font-medium">Principal Investigator</p>
-                        <p class="text-gray-500 text-xs">Yale University</p>
-                    </div>
-                </div>
-                
-                <div class="mb-4">
-                    <div class="flex flex-wrap gap-1 mb-2">
-                        <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Neuroscience</span>
-                        <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Immunology</span>
-                    </div>
-                    <p class="text-gray-600 text-sm">Neuroinflammation and autoimmune disease researcher.</p>
-                </div>
-
-                <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
-                    <span>9 Projects</span>
-                    <span>$1.3M Raised</span>
-                    <span>87% Success</span>
-                </div>
-
-             <a href="./researcher-profile.html">
-                <button class="w-full asu text-white py-2 rounded-lg hover:bg-red-900 text-sm font-medium">
-                    View Profile
-                   
-                </button>
-                </a>
-            </div>
-
-            <!-- Researcher Card 7 -->
-            <div class="flex flex-col h-72 researcher-card bg-white rounded-xl shadow-sm p-6 border border-gray-200" data-role="researcher" data-specialty="cancer-research genomics">
-                <div class="flex items-center mb-4">
-                    <div class="w-16 h-16 bg-gradient-to-br from-pink-400 to-red-500 rounded-full flex items-center justify-center text-white text-xl font-bold mr-4">
-                        LT
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg text-gray-900">Dr. Lisa Thompson</h3>
-                        <p class="text-gray-600 text-sm font-medium">Senior Researcher</p>
-                        <p class="text-gray-500 text-xs">Memorial Sloan Kettering</p>
-                    </div>
-                </div>
-                
-                <div class="mb-4">
-                    <div class="flex flex-wrap gap-1 mb-2">
-                        <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">Cancer Research</span>
-                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Genomics</span>
-                    </div>
-                    <p class="text-gray-600 text-sm">Tumor genomics and personalized cancer therapy specialist.</p>
-                </div>
-
-                <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
-                    <span>7 Projects</span>
-                    <span>$1.1M Raised</span>
-                    <span>91% Success</span>
-                </div>
-
-                  <div class="mt-auto">
-      <a href="./researcher-profile.html">
-                <button class="w-full asu text-white py-2 rounded-lg hover:bg-red-900 text-sm font-medium">
-                    View Profile
-                   
-                </button>
-                </a>
-    </div>
-            </div>
-
-            <!-- Researcher Card 8 -->
-            <div class=" flex flex-col h-72 researcher-card bg-white rounded-xl shadow-sm p-6 border border-gray-200" data-role="consultant" data-specialty="immunology drug-discovery">
-                <div class="flex items-center mb-4">
-                    <div class="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center text-white text-xl font-bold mr-4">
-                        RK
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg text-gray-900">Dr. Robert Kim</h3>
-                        <p class="text-green-600 text-sm font-medium">Research Consultant</p>
-                        <p class="text-gray-500 text-xs">University of Chicago</p>
-                    </div>
-                </div>
-                
-                <div class="mb-4">
-                    <div class="flex flex-wrap gap-1 mb-2">
-                        <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Immunology</span>
-                        <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">Drug Discovery</span>
-                    </div>
-                    <p class="text-gray-600 text-sm">Vaccine development and immune system modulation expert.</p>
-                </div>
-
-                <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
-                    <span>11 Projects</span>
-                    <span>$1.7M Raised</span>
-                    <span>89% Success</span>
-                </div>
-
-                  <div class="mt-auto">
-        <a href="./researcher-profile.html">
-                <button class="w-full asu text-white py-2 rounded-lg hover:bg-red-900 text-sm font-medium">
-                    View Profile
-                   
-                </button>
-                </a>
-    </div>
-            </div>
-        </div>
+        <div id="researchersGrid" class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
 
 
 
@@ -372,34 +99,125 @@
     </main>
 
     <script>
+        const researchersGrid = document.getElementById('researchersGrid');
+        const searchInput = document.getElementById('searchInput');
+        let researchersData = [];
         let currentRoleFilter = 'all';
         let currentSpecialtyFilter = '';
+        let searchTerm = '';
 
-        function filterByRole(role) {
-            currentRoleFilter = role;
-            
-            // Update active button
-            document.querySelectorAll('.filter-button').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-            
-            applyFilters();
+        const slugify = (text = '') => text
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/^-|-$/g, '');
+
+        const roleFromTitle = (title = '') => {
+            const normalized = title.toLowerCase();
+            if (normalized.includes('consultant')) return 'consultant';
+            if (normalized.includes('professor')) return 'pi';
+            return 'researcher';
+        };
+
+        const getInitials = (name = '') => name
+            .split(' ')
+            .filter(Boolean)
+            .map(part => part[0])
+            .join('')
+            .slice(0, 2)
+            .toUpperCase() || 'R';
+
+        const truncateText = (text = '', length = 110) => text.length > length
+            ? `${text.slice(0, length)}...`
+            : text;
+
+        function updateRoleCounts() {
+            const counts = { all: researchersData.length, pi: 0, consultant: 0, researcher: 0 };
+            researchersData.forEach(item => {
+                counts[roleFromTitle(item.title)] += 1;
+            });
+
+            document.querySelectorAll('.filter-button').forEach(btn => {
+                const role = btn.dataset.role;
+                const label = btn.dataset.label || btn.textContent;
+                if (role && counts[role] !== undefined) {
+                    btn.textContent = `${label} (${counts[role]})`;
+                }
+            });
         }
 
-        function filterBySpecialty(specialty) {
-            // Toggle specialty filter
-            if (currentSpecialtyFilter === specialty) {
-                currentSpecialtyFilter = '';
-                event.target.classList.remove('bg-blue-500', 'text-white');
-            } else {
-                // Remove previous specialty selection
-                document.querySelectorAll('.specialty-filter').forEach(btn => {
-                    btn.classList.remove('bg-blue-500', 'text-white');
-                });
-                
-                currentSpecialtyFilter = specialty;
-                event.target.classList.add('bg-blue-500', 'text-white');
-            }
+
+            // Get category color
+      function getDepartmentColor(department) {
+        const colors = {
+        "Biomedical Engineering": "bg-red-100 text-red-800" ,
+         "Physics": "bg-yellow-100 text-yellow-800",
+          "Biochemistry": "bg-purple-100 text-purple-800",
+          "Engineering": "bg-orange-100 text-orange-800",
+          "Computer Science": "bg-indigo-100 text-indigo-800",
+          "Environmental Science": "bg-pink-100 text-pink-800",
+          "Cell Biology": "bg-green-100 text-green-800",
+          "Machine Learning":"bg-blue-100 text-blue-800",
+          "AI":"bg-red-100 text-red-800"
+
             
+        };
+
+        return colors[department] || "bg-gray-100 text-gray-800";
+      }
+
+        
+        function renderResearchers() {
+            if (!researchersGrid) return;
+
+            researchersGrid.innerHTML = researchersData.map(researcher => {
+                const role = roleFromTitle(researcher.title);
+                const specialties = researcher.researchAreas || [];
+                // console.log(researcher);
+                const specialtySlugs = specialties.map(slugify).join(' ');
+                const chips = specialties.map(area => {
+            return `<span class="text-xs px-2 py-1 rounded-full font-semibold ${getDepartmentColor(area)}">${area}</span>`;
+        }).join('');
+                return `
+                    <div class="flex flex-col h-full researcher-card bg-white rounded-xl shadow-sm p-6 border border-gray-200" data-role="${role}" data-specialty="${specialtySlugs}">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-yellow-500 rounded-full flex items-center justify-center text-white text-xl font-bold mr-4">
+                                ${getInitials(researcher.name)}
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg text-gray-900">${researcher.name}</h3>
+                                <p class="text-blue-600 text-sm font-medium">${researcher.title || 'Researcher'}</p>
+                                <p class="text-gray-500 text-xs">${researcher.affiliation || 'Affiliation TBD'}</p>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-1 mb-2 ">
+                            ${chips}    
+                        </div>
+                       
+                        <div class="mb-4">
+                            
+
+                            <p class="text-gray-600 text-sm">${truncateText(researcher.bio || '')}</p>
+                        </div>
+
+                        <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
+                            <span >${researcher.department || 'Department'}</span>
+                            <span>${researcher.email || ''}</span>
+                        </div>
+
+                        <div class="mt-auto">
+                            <a href="./researcher-profile.html">
+                                <button class="w-full asu text-white py-2 rounded-lg hover:bg-red-900 text-sm font-medium">
+                                    View Profile
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            updateRoleCounts();
             applyFilters();
         }
 
@@ -408,46 +226,68 @@
             
             cards.forEach(card => {
                 const cardRole = card.getAttribute('data-role');
-                const cardSpecialties = card.getAttribute('data-specialty');
+                const cardSpecialties = card.getAttribute('data-specialty') || '';
+                const textContent = card.textContent.toLowerCase();
                 
                 let showCard = true;
                 
-                // Apply role filter
                 if (currentRoleFilter !== 'all' && cardRole !== currentRoleFilter) {
                     showCard = false;
                 }
                 
-                // Apply specialty filter
-                if (currentSpecialtyFilter && !cardSpecialties.includes(currentSpecialtyFilter)) {
+                if (showCard && currentSpecialtyFilter && !cardSpecialties.includes(currentSpecialtyFilter)) {
+                    showCard = false;
+                }
+
+                if (showCard && searchTerm && !textContent.includes(searchTerm)) {
                     showCard = false;
                 }
                 
-                // Show/hide card
-                if (showCard) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
+                card.style.display = showCard ? 'flex' : 'none';
             });
         }
 
-        // Search functionality
-        document.getElementById('searchInput').addEventListener('input', function(e) {
-            const searchTerm = e.target.value.toLowerCase();
-            const cards = document.querySelectorAll('.researcher-card');
+        function filterByRole(role, button) {
+            currentRoleFilter = role;
+            document.querySelectorAll('.filter-button').forEach(btn => btn.classList.remove('active'));
+            if (button) button.classList.add('active');
+            applyFilters();
+        }
+
+        function filterBySpecialty(specialty, button) {
+            if (currentSpecialtyFilter === specialty) {
+                currentSpecialtyFilter = '';
+                button?.classList.remove('bg-blue-500', 'text-white');
+            } else {
+                currentSpecialtyFilter = specialty;
+                document.querySelectorAll('.specialty-filter').forEach(btn => {
+                    btn.classList.remove('bg-blue-500', 'text-white');
+                });
+                button?.classList.add('bg-blue-500', 'text-white');
+            }
             
-            cards.forEach(card => {
-                const name = card.querySelector('h3').textContent.toLowerCase();
-                const specialty = card.getAttribute('data-specialty').toLowerCase();
-                const description = card.querySelector('p.text-gray-600').textContent.toLowerCase();
-                
-                if (name.includes(searchTerm) || specialty.includes(searchTerm) || description.includes(searchTerm)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
+            applyFilters();
+        }
+
+        async function loadResearchers() {
+            if (!researchersGrid) return;
+            try {
+                const response = await fetch('./data.json');
+                const data = await response.json();
+                researchersData = data.professors || [];
+                renderResearchers();
+            } catch (error) {
+                researchersGrid.innerHTML = '<p class="text-gray-500 col-span-full">Unable to load researchers right now.</p>';
+                console.error('Failed to load researchers', error);
+            }
+        }
+
+        searchInput?.addEventListener('input', (e) => {
+            searchTerm = e.target.value.toLowerCase();
+            applyFilters();
         });
+
+        document.addEventListener('DOMContentLoaded', loadResearchers);
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98b2cd7272078bf2',t:'MTc1OTg5Njc3My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

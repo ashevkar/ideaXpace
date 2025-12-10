@@ -8,7 +8,7 @@
       "department": "Biomedical Engineering",
       "title": "Associate Professor",
       "bio": "Dr. Rachel Kim specializes in AI-powered medical imaging and machine learning applications in healthcare. Her research focuses on developing advanced diagnostic systems for early disease detection.",
-      "researchAreas": ["AI", "Medical Imaging", "Machine Learning", "Cancer Detection"],
+      "researchAreas": ["AI", "Machine Learning"],
       "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400"
     },
     {
@@ -19,7 +19,7 @@
       "department": "Environmental Engineering",
       "title": "Professor",
       "bio": "Prof. Maria Johnson is a leading expert in environmental sustainability and marine conservation. Her work focuses on innovative solutions for ocean pollution and ecosystem protection.",
-      "researchAreas": ["Environmental Science", "Marine Biology", "Sustainability", "Plastic Pollution"],
+      "researchAreas": ["Environmental Science", "Biology", "Plastic Pollution"],
       "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400"
     },
     {
@@ -30,7 +30,7 @@
       "department": "Physics",
       "title": "Associate Professor",
       "bio": "Dr. Alex Liu is a quantum computing researcher working on developing practical quantum processors for real-world applications.",
-      "researchAreas": ["Quantum Computing", "Physics", "Technology", "Quantum Mechanics"],
+      "researchAreas": [ "Physics", "Technology"],
       "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400"
     },
     {
@@ -134,7 +134,7 @@
       "thumbnail": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800",
       "duration": "8:02",
       "views": 1247,
-      "date": "2025-01-15",
+      "date": "2025-11-15",
       "keywords": ["AI", "Cancer Detection", "Medical Imaging", "Machine Learning", "Deep Learning", "Neural Networks"],
       "funding": {
         "amount": 250000,
@@ -162,7 +162,7 @@
       "thumbnail": "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=800",
       "duration": "9:32",
       "views": 892,
-      "date": "2025-01-10",
+      "date": "2025-09-10",
       "keywords": ["Environmental", "Plastic Pollution", "Marine Biology", "Sustainability", "Biodegradable Materials"],
       "funding": {
         "amount": 180000,
@@ -189,7 +189,7 @@
       "thumbnail": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800",
       "duration": "10:07",
       "views": 2156,
-      "date": "2025-01-08",
+      "date": "2025-7-08",
       "keywords": ["Quantum Computing", "Physics", "Technology", "Innovation", "Quantum Mechanics"],
       "funding": {
         "amount": 500000,
@@ -211,12 +211,18 @@
       "title": "Live-cell Imaging of Endocytic Transport",
       "description": "Using functionalized nanobodies in cultured cells to visualize and understand endocytic transport mechanisms in real-time.",
       "category": "medical",
+      "funding": {
+        "amount": 200000,
+        "duration": 36,
+        "status": "Active",
+        "source": "National Science Foundation"
+      },
       "authorIds": [4],
       "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
       "thumbnail": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800",
       "duration": "6:43",
       "views": 726,
-      "date": "2025-01-12",
+      "date": "2025-7-12",
       "keywords": ["Cell Biology", "Imaging", "Nanotechnology", "Biochemistry"]
     },
     {
@@ -228,8 +234,14 @@
       "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
       "thumbnail": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800",
       "duration": "8:13",
+      "funding": {
+        "amount": 350000,
+        "duration": 36,
+        "status": "Active",
+        "source": "National Science Foundation"
+      },
       "views": 416,
-      "date": "2025-01-05",
+      "date": "2025-6-05",
       "keywords": ["Biochemistry", "NMR", "Proteins", "Research Methods"]
     },
     {
@@ -241,8 +253,14 @@
       "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
       "thumbnail": "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800",
       "duration": "7:26",
+      "funding": {
+        "amount": 110000,
+        "duration": 36,
+        "status": "Active",
+        "source": "National Science Foundation"
+      },
       "views": 641,
-      "date": "2025-01-03",
+      "date": "2025-11-03",
       "keywords": ["Mitochondria", "Cell Biology", "Microscopy", "Disease Research"]
     },
     {
