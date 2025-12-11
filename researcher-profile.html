@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dr. Sarah Chen - Researcher Profile</title>
+    <title>Researcher Profile</title>
     <script src="https://cdn.tailwindcss.com"></script>
-      <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css" />
 
     <style>
       body {
@@ -38,6 +38,7 @@
           <!-- Profile Photo -->
           <div class="flex-shrink-0">
             <div
+              id="profileAvatar"
               class="w-32 h-32 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-white text-4xl font-bold"
             >
               SC
@@ -46,35 +47,16 @@
 
           <!-- Profile Info -->
           <div class="flex-1">
-            <h1 class="text-3xl font-bold text-gray-900 mb-2">
-              Dr. Sarah Chen
+            <h1 id="profileName" class="text-3xl font-bold text-gray-900 mb-2">
+              Loading...
             </h1>
             <p class="text-xl mb-3">
-              <mark class="bg-yellow-500"
-                >Principal Investigator & Research Consultant</mark
-              >
+              <mark id="profileTitle" class="bg-yellow-500">Loading...</mark>
             </p>
-            <p class="text-gray-600 mb-4">
-              Computational Biology & Machine Learning | Stanford University
-            </p>
+            <p id="profileAffiliation" class="text-gray-600 mb-4">Loading...</p>
 
-            <div class="flex flex-wrap gap-3 mb-4">
-              <span
-                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                >Machine Learning</span
-              >
-              <span
-                class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm"
-                >Genomics</span
-              >
-              <span
-                class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm"
-                >Bioinformatics</span
-              >
-              <span
-                class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm"
-                >Drug Discovery</span
-              >
+            <div id="researchAreas" class="flex flex-wrap gap-3 mb-4">
+              <!-- Research areas will be populated dynamically -->
             </div>
 
             <div class="flex items-center gap-6 text-sm text-gray-600">
@@ -87,13 +69,13 @@
                     clip-rule="evenodd"
                   />
                 </svg>
-                <span>15 Projects Funded</span>
+                <span id="projectCount">0 Projects Funded</span>
               </div>
               <div class="flex items-center gap-2">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span>$2.3M Raised</span>
+                <span id="fundingAmount">$0 Raised</span>
               </div>
               <div class="flex items-center gap-2">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -103,7 +85,7 @@
                     clip-rule="evenodd"
                   />
                 </svg>
-                <span>Member since 2019</span>
+                <span id="memberSince">Member since 2020</span>
               </div>
             </div>
           </div>
@@ -115,11 +97,13 @@
             >
               View All Researches
             </button>
-            <button
-              class="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-50 font-medium"
+            <a
+              id="contactEmail"
+              href="mailto:"
+              class="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-50 font-medium text-center"
             >
               Contact
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -127,19 +111,9 @@
       <!-- About Section -->
       <div class="bg-white rounded-xl shadow-sm p-8 mb-8">
         <h2 class="text-2xl font-bold text-gray-900 mb-4">About</h2>
-        <p class="text-gray-700 leading-relaxed mb-4">
-          Dr. Sarah Chen is a leading researcher in computational biology and
-          machine learning applications in genomics. With over 10 years of
-          experience, she has pioneered novel approaches to drug discovery using
-          AI-driven methods. Her work has been published in top-tier journals
-          including Nature, Science, and Cell.
-        </p>
-        <p class="text-gray-700 leading-relaxed">
-          As both a Principal Investigator and Research Consultant, Dr. Chen
-          collaborates with pharmaceutical companies and academic institutions
-          to accelerate breakthrough discoveries in personalized medicine and
-          therapeutic development.
-        </p>
+        <div id="profileBio" class="text-gray-700 leading-relaxed">
+          <p>Loading...</p>
+        </div>
       </div>
 
       <!-- Project Tabs -->
@@ -169,262 +143,28 @@
 
         <!-- Current Projects Tab -->
         <div id="current-tab" class="tab-content p-8">
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Project Card 1 -->
-            <div
-              class="project-card bg-gray-50 rounded-lg p-6 border border-gray-200"
-            >
-              <div class="flex items-center justify-between mb-3">
-                <span
-                  class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium"
-                  >Active</span
-                >
-                <span class="text-sm text-gray-500">85% Funded</span>
-              </div>
-              <h3 class="font-bold text-lg text-gray-900 mb-2">
-                AI-Driven Cancer Drug Discovery
-              </h3>
-              <p class="text-gray-600 text-sm mb-4">
-                Developing machine learning models to identify novel therapeutic
-                compounds for aggressive cancer types.
-              </p>
-              <div class="mb-4">
-                <div class="flex justify-between text-sm text-gray-600 mb-1">
-                  <span>$340,000 raised</span>
-                  <span>$400,000 goal</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2">
-                  <div
-                    class="bg-green-500 h-2 rounded-full"
-                    style="width: 85%"
-                  ></div>
-                </div>
-              </div>
-              <button
-                class="w-full asu text-white py-2 rounded-lg hover:bg-red-700 text-sm font-medium"
-              >
-                Support This Project
-              </button>
-            </div>
-
-            <!-- Project Card 2 -->
-            <div
-              class="project-card bg-gray-50 rounded-lg p-6 border border-gray-200"
-            >
-              <div class="flex items-center justify-between mb-3">
-                <span
-                  class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium"
-                  >Active</span
-                >
-                <span class="text-sm text-gray-500">62% Funded</span>
-              </div>
-              <h3 class="font-bold text-lg text-gray-900 mb-2">
-                Genomic Biomarker Analysis
-              </h3>
-              <p class="text-gray-600 text-sm mb-4">
-                Identifying genetic markers for early detection of
-                neurodegenerative diseases using deep learning.
-              </p>
-              <div class="mb-4">
-                <div class="flex justify-between text-sm text-gray-600 mb-1">
-                  <span>$186,000 raised</span>
-                  <span>$300,000 goal</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2">
-                  <div
-                    class="bg-blue-500 h-2 rounded-full"
-                    style="width: 62%"
-                  ></div>
-                </div>
-              </div>
-              <button
-                class="w-full asu text-white py-2 rounded-lg hover:bg-red-700 text-sm font-medium"
-              >
-                Support This Project
-              </button>
-            </div>
-
-            <!-- Project Card 3 -->
-            <div
-              class="project-card bg-gray-50 rounded-lg p-6 border border-gray-200"
-            >
-              <div class="flex items-center justify-between mb-3">
-                <span
-                  class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs font-medium"
-                  >Launching</span
-                >
-                <span class="text-sm text-gray-500">15% Funded</span>
-              </div>
-              <h3 class="font-bold text-lg text-gray-900 mb-2">
-                Personalized Medicine Platform
-              </h3>
-              <p class="text-gray-600 text-sm mb-4">
-                Building an AI platform to customize treatment plans based on
-                individual genetic profiles.
-              </p>
-              <div class="mb-4">
-                <div class="flex justify-between text-sm text-gray-600 mb-1">
-                  <span>$75,000 raised</span>
-                  <span>$500,000 goal</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2">
-                  <div
-                    class="bg-yellow-500 h-2 rounded-full"
-                    style="width: 15%"
-                  ></div>
-                </div>
-              </div>
-              <button
-                class="w-full asu text-white py-2 rounded-lg hover:bg-red-700 text-sm font-medium"
-              >
-                Support This Project
-              </button>
-            </div>
+          <div
+            id="currentProjects"
+            class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            <!-- Projects will be loaded dynamically -->
           </div>
         </div>
 
         <!-- Upcoming Projects Tab -->
         <div id="upcoming-tab" class="tab-content p-8 hidden">
-          <div class="grid md:grid-cols-2 gap-6">
-            <div
-              class="project-card bg-gray-50 rounded-lg p-6 border border-gray-200"
-            >
-              <div class="flex items-center justify-between mb-3">
-                <span
-                  class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium"
-                  >Planning</span
-                >
-                <span class="text-sm text-gray-500">Q2 2024</span>
-              </div>
-              <h3 class="font-bold text-lg text-gray-900 mb-2">
-                Quantum Computing for Drug Simulation
-              </h3>
-              <p class="text-gray-600 text-sm mb-4">
-                Exploring quantum algorithms for molecular simulation and drug
-                interaction modeling.
-              </p>
-              <div class="text-sm text-gray-600 mb-4">
-                <span>Target: $750,000</span>
-              </div>
-              <button
-                class="w-full bg-gray-300 text-gray-600 py-2 rounded-lg text-sm font-medium cursor-not-allowed"
-              >
-                Coming Soon
-              </button>
-            </div>
-
-            <div
-              class="project-card bg-gray-50 rounded-lg p-6 border border-gray-200"
-            >
-              <div class="flex items-center justify-between mb-3">
-                <span
-                  class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium"
-                  >Planning</span
-                >
-                <span class="text-sm text-gray-500">Q3 2024</span>
-              </div>
-              <h3 class="font-bold text-lg text-gray-900 mb-2">
-                Multi-Omics Data Integration
-              </h3>
-              <p class="text-gray-600 text-sm mb-4">
-                Developing tools to integrate genomics, proteomics, and
-                metabolomics data for comprehensive analysis.
-              </p>
-              <div class="text-sm text-gray-600 mb-4">
-                <span>Target: $450,000</span>
-              </div>
-              <button
-                class="w-full bg-gray-300 text-gray-600 py-2 rounded-lg text-sm font-medium cursor-not-allowed"
-              >
-                Coming Soon
-              </button>
-            </div>
+          <div id="upcomingProjects" class="grid md:grid-cols-2 gap-6">
+            <!-- Upcoming projects will be loaded dynamically -->
           </div>
         </div>
 
         <!-- Completed Projects Tab -->
         <div id="completed-tab" class="tab-content p-8 hidden">
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div
-              class="project-card bg-gray-50 rounded-lg p-6 border border-gray-200"
-            >
-              <div class="flex items-center justify-between mb-3">
-                <span
-                  class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-xs font-medium"
-                  >Completed</span
-                >
-                <span class="text-sm text-gray-500">2023</span>
-              </div>
-              <h3 class="font-bold text-lg text-gray-900 mb-2">
-                Protein Folding Prediction
-              </h3>
-              <p class="text-gray-600 text-sm mb-4">
-                Successfully developed AI models for accurate protein structure
-                prediction.
-              </p>
-              <div class="text-sm text-green-600 mb-4">
-                <span>✓ $320,000 raised • 15 publications</span>
-              </div>
-              <button
-                class="w-full bg-yellow-500 text-black py-2 rounded-lg text-sm font-medium"
-              >
-                View Results
-              </button>
-            </div>
-
-            <div
-              class="project-card bg-gray-50 rounded-lg p-6 border border-gray-200"
-            >
-              <div class="flex items-center justify-between mb-3">
-                <span
-                  class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-xs font-medium"
-                  >Completed</span
-                >
-                <span class="text-sm text-gray-500">2022</span>
-              </div>
-              <h3 class="font-bold text-lg text-gray-900 mb-2">
-                COVID-19 Variant Analysis
-              </h3>
-              <p class="text-gray-600 text-sm mb-4">
-                Analyzed viral mutations and their impact on vaccine
-                effectiveness using ML.
-              </p>
-              <div class="text-sm text-green-600 mb-4">
-                <span>✓ $180,000 raised • 8 publications</span>
-              </div>
-              <button
-                class="w-full bg-yellow-500 text-black py-2 rounded-lg text-sm font-medium"
-              >
-                View Results
-              </button>
-            </div>
-
-            <div
-              class="project-card bg-gray-50 rounded-lg p-6 border border-gray-200"
-            >
-              <div class="flex items-center justify-between mb-3">
-                <span
-                  class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-xs font-medium"
-                  >Completed</span
-                >
-                <span class="text-sm text-gray-500">2021</span>
-              </div>
-              <h3 class="font-bold text-lg text-gray-900 mb-2">
-                Rare Disease Gene Discovery
-              </h3>
-              <p class="text-gray-600 text-sm mb-4">
-                Identified novel genetic causes of rare pediatric diseases
-                through genomic analysis.
-              </p>
-              <div class="text-sm text-green-600 mb-4">
-                <span>✓ $250,000 raised • 12 publications</span>
-              </div>
-              <button
-                class="w-full bg-yellow-500 text-black py-2 rounded-lg text-sm font-medium"
-              >
-                View Results
-              </button>
-            </div>
+          <div
+            id="completedProjects"
+            class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            <!-- Completed projects will be loaded dynamically -->
           </div>
         </div>
       </div>
@@ -535,6 +275,287 @@
     </main>
 
     <script>
+      // Helper functions
+      const getInitials = (name = "") =>
+        name
+          .split(" ")
+          .filter(Boolean)
+          .map((part) => part[0])
+          .join("")
+          .slice(0, 2)
+          .toUpperCase() || "R";
+
+      const getDepartmentColor = (department) => {
+        const colors = {
+          "Biomedical Engineering": "bg-red-100 text-red-800",
+          Physics: "bg-yellow-100 text-yellow-800",
+          Biochemistry: "bg-purple-100 text-purple-800",
+          Engineering: "bg-orange-100 text-orange-800",
+          "Computer Science": "bg-indigo-100 text-indigo-800",
+          "Environmental Science": "bg-pink-100 text-pink-800",
+          "Cell Biology": "bg-green-100 text-green-800",
+          "Machine Learning": "bg-blue-100 text-blue-800",
+          AI: "bg-red-100 text-red-800",
+        };
+        return colors[department] || "bg-gray-100 text-gray-800";
+      };
+
+      const formatCurrency = (amount) => {
+        if (amount >= 1000000) {
+          return `$${(amount / 1000000).toFixed(1)}M`;
+        } else if (amount >= 1000) {
+          return `$${(amount / 1000).toFixed(0)}K`;
+        }
+        return `$${amount}`;
+      };
+
+      // Get researcher ID from URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const researcherId = parseInt(urlParams.get("id"));
+
+      let researcherData = null;
+      let allProjects = [];
+
+      async function loadResearcherProfile() {
+        if (!researcherId || isNaN(researcherId)) {
+          document.body.innerHTML =
+            '<div class="p-8 text-center"><h1 class="text-2xl font-bold mb-4">Invalid Researcher ID</h1><p class="text-gray-600">Please select a researcher from the <a href="./list-of-reseachers.html" class="text-blue-600 underline">researchers directory</a>.</p></div>';
+          return;
+        }
+
+        try {
+          const response = await fetch("./data.json");
+          const data = await response.json();
+
+          // Find the researcher
+          researcherData = data.professors.find((p) => p.id === researcherId);
+
+          if (!researcherData) {
+            document.body.innerHTML =
+              '<div class="p-8 text-center"><h1 class="text-2xl font-bold mb-4">Researcher Not Found</h1><p class="text-gray-600">The requested researcher profile could not be found.</p><a href="./list-of-reseachers.html" class="text-blue-600 underline mt-4 inline-block">Return to Researchers Directory</a></div>';
+            return;
+          }
+
+          // Get all projects for this researcher
+          allProjects = data.researchProjects.filter(
+            (project) =>
+              project.authorIds && project.authorIds.includes(researcherId)
+          );
+
+          // Update page title
+          document.title = `${researcherData.name} - Researcher Profile`;
+
+          // Update profile header
+          const profileAvatar = document.getElementById("profileAvatar");
+          profileAvatar.textContent = getInitials(researcherData.name);
+
+          document.getElementById("profileName").textContent =
+            researcherData.name;
+          document.getElementById("profileTitle").textContent =
+            researcherData.title || "Researcher";
+          document.getElementById("profileAffiliation").textContent = `${
+            researcherData.department || ""
+          } | ${researcherData.affiliation || ""}`;
+
+          // Update research areas
+          const researchAreasDiv = document.getElementById("researchAreas");
+          if (
+            researcherData.researchAreas &&
+            researcherData.researchAreas.length > 0
+          ) {
+            researchAreasDiv.innerHTML = researcherData.researchAreas
+              .map(
+                (area) =>
+                  `<span class="px-3 py-1 rounded-full text-sm ${getDepartmentColor(
+                    area
+                  )}">${area}</span>`
+              )
+              .join("");
+          }
+
+          // Update stats
+          document.getElementById(
+            "projectCount"
+          ).textContent = `${allProjects.length} Projects Funded`;
+
+          const totalFunding = allProjects.reduce(
+            (sum, p) => sum + (p.funding?.amount || 0),
+            0
+          );
+          document.getElementById(
+            "fundingAmount"
+          ).textContent = `${formatCurrency(totalFunding)} Raised`;
+
+          // Update bio
+          const bioDiv = document.getElementById("profileBio");
+          if (researcherData.bio) {
+            bioDiv.innerHTML = `<p>${researcherData.bio}</p>`;
+          }
+
+          // Update contact email
+          const contactLink = document.getElementById("contactEmail");
+          if (researcherData.email && contactLink) {
+            contactLink.href = `mailto:${researcherData.email}`;
+          }
+
+          // Render projects
+          renderProjects();
+
+          // Update tab counts
+          updateTabCounts();
+        } catch (error) {
+          console.error("Failed to load researcher profile", error);
+          document.body.innerHTML =
+            '<div class="p-8 text-center"><h1 class="text-2xl font-bold mb-4">Error Loading Profile</h1><p class="text-gray-600">Unable to load the researcher profile at this time.</p></div>';
+        }
+      }
+
+      function renderProjects() {
+        // For now, all projects are considered "Active" since that's what's in the data
+        // You can modify this logic based on your actual project statuses
+        const currentProjects = allProjects.filter((p) => {
+          const status = p.funding?.status?.toLowerCase();
+          return status === "active" || !status;
+        });
+        const completedProjects = allProjects.filter((p) => {
+          const status = p.funding?.status?.toLowerCase();
+          return status === "completed" || status === "finished";
+        });
+        const upcomingProjects = allProjects.filter((p) => {
+          const status = p.funding?.status?.toLowerCase();
+          return status === "planning" || status === "upcoming";
+        });
+
+        renderProjectCards("currentProjects", currentProjects, "Active");
+        renderProjectCards("completedProjects", completedProjects, "Completed");
+        renderProjectCards("upcomingProjects", upcomingProjects, "Planning");
+      }
+
+      function renderProjectCards(containerId, projects, status) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+
+        if (projects.length === 0) {
+          container.innerHTML =
+            '<p class="text-gray-500 col-span-full text-center py-8">No projects found.</p>';
+          return;
+        }
+
+        container.innerHTML = projects
+          .map((project) => {
+            const funding = project.funding || {};
+            const amount = funding.amount || 0;
+            const percentage =
+              amount > 0
+                ? Math.min(100, Math.round((amount / (amount * 1.2)) * 100))
+                : 0;
+
+            let statusBadge = "";
+            let statusColor = "";
+            let progressBar = "";
+            let button = "";
+
+            if (status === "Active") {
+              statusBadge =
+                '<span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">Active</span>';
+              statusColor =
+                percentage > 50
+                  ? "bg-green-500"
+                  : percentage > 25
+                  ? "bg-blue-500"
+                  : "bg-yellow-500";
+              progressBar = `
+              <div class="mb-4">
+                <div class="flex justify-between text-sm text-gray-600 mb-1">
+                  <span>${formatCurrency(amount)} raised</span>
+                  <span>${formatCurrency(Math.round(amount * 1.2))} goal</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                  <div class="${statusColor} h-2 rounded-full" style="width: ${percentage}%"></div>
+                </div>
+              </div>
+            `;
+              button =
+                '<button class="w-full asu text-white py-2 rounded-lg hover:bg-red-700 text-sm font-medium">Support This Project</button>';
+            } else if (status === "Completed") {
+              statusBadge =
+                '<span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-xs font-medium">Completed</span>';
+              const year = project.date
+                ? new Date(project.date).getFullYear()
+                : "N/A";
+              progressBar = `<div class="text-sm text-green-600 mb-4"><span>✓ ${formatCurrency(
+                amount
+              )} raised</span></div>`;
+              button =
+                '<button class="w-full bg-yellow-500 text-black py-2 rounded-lg text-sm font-medium">View Results</button>';
+            } else {
+              statusBadge =
+                '<span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">Planning</span>';
+              progressBar = `<div class="text-sm text-gray-600 mb-4"><span>Target: ${formatCurrency(
+                amount || 0
+              )}</span></div>`;
+              button =
+                '<button class="w-full bg-gray-300 text-gray-600 py-2 rounded-lg text-sm font-medium cursor-not-allowed">Coming Soon</button>';
+            }
+
+            return `
+            <div class="project-card bg-gray-50 rounded-lg p-6 border border-gray-200 flex flex-col justify-between">
+              
+              <div class="flex items-center justify-between mb-3">
+                ${statusBadge}
+                <span class="text-sm text-gray-500">${
+                  status === "Completed" && project.date
+                    ? new Date(project.date).getFullYear()
+                    : percentage + "% Funded"
+                }</span>
+              </div>
+              <h3 class="font-bold text-lg text-gray-900 mb-2">${
+                project.title || "Untitled Project"
+              }</h3>
+              <p class="text-gray-600 text-sm mb-4">${
+                project.description || ""
+              }</p>
+
+              <div class="mt-auto pt-0 space-y-4 float-">
+
+                ${progressBar}
+                ${button}
+              </div>
+
+              
+            </div>
+          `;
+          })
+          .join("");
+      }
+
+      function updateTabCounts() {
+        const currentCount = allProjects.filter((p) => {
+          const status = p.funding?.status?.toLowerCase();
+          return status === "active" || !status;
+        }).length;
+        const upcomingCount = allProjects.filter((p) => {
+          const status = p.funding?.status?.toLowerCase();
+          return status === "planning" || status === "upcoming";
+        }).length;
+        const completedCount = allProjects.filter((p) => {
+          const status = p.funding?.status?.toLowerCase();
+          return status === "completed" || status === "finished";
+        }).length;
+
+        const tabs = document.querySelectorAll(".tab-button");
+        tabs.forEach((tab) => {
+          const text = tab.textContent;
+          if (text.includes("Current")) {
+            tab.textContent = `Current Projects (${currentCount})`;
+          } else if (text.includes("Upcoming")) {
+            tab.textContent = `Upcoming Projects (${upcomingCount})`;
+          } else if (text.includes("Completed")) {
+            tab.textContent = `Completed Projects (${completedCount})`;
+          }
+        });
+      }
+
       function showTab(tabName) {
         // Hide all tab contents
         const tabContents = document.querySelectorAll(".tab-content");
@@ -550,6 +571,9 @@
         // Add active class to clicked button
         event.target.classList.add("active");
       }
+
+      // Load profile when page loads
+      document.addEventListener("DOMContentLoaded", loadResearcherProfile);
     </script>
     <script>
       (function () {

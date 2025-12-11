@@ -11,6 +11,9 @@
         }
         .blog-card {
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content:space-between;
         }
         .blog-card:hover {
             transform: translateY(-2px);
@@ -175,6 +178,7 @@
                 <h3 class="text-xl font-bold text-gray-900 mb-3">How We Built Our AI Drug Discovery Pipeline</h3>
                 <p class="text-gray-600 mb-4">A detailed look at the machine learning architecture and data processing methods behind our successful drug discovery platform that has identified 12 promising compounds.</p>
                 
+                <div class="flex flex-col justify-between">
                 <div class="flex items-center mb-4">
                     <div class="w-8 h-8 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3">
                         MJ
@@ -185,7 +189,7 @@
                     </div>
                 </div>
                 
-                <div class="flex items-center justify-between">
+                <div class="flex items-center justify-between mt-">
                     <div class="flex items-center gap-3 text-sm text-gray-500">
                         <span>1,234 views</span>
                         <span>89 likes</span>
@@ -193,6 +197,7 @@
                     </div>
                     <button class="text-blue-600 hover:text-blue-700 text-sm font-medium">Read More</button>
                 </div>
+            </div>
             </div>
 
             <!-- Article Card 2 -->
@@ -205,6 +210,8 @@
                 <h3 class="text-xl font-bold text-gray-900 mb-3">$2.5M Milestone: Cancer Immunotherapy Project Update</h3>
                 <p class="text-gray-600 mb-4">We've reached our funding goal! Here's what this means for our CAR-T cell therapy research and the next phases of clinical trials starting this fall.</p>
                 
+              
+
                 <div class="flex items-center mb-4">
                     <div class="w-8 h-8 bg-gradient-to-br from-red-400 to-pink-500 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3">
                         EP
@@ -223,6 +230,7 @@
                     </div>
                     <button class="text-blue-600 hover:text-blue-700 text-sm font-medium">Read More</button>
                 </div>
+            
             </div>
 
             <!-- Article Card 3 -->
@@ -256,7 +264,7 @@
             </div>
 
             <!-- Article Card 4 -->
-            <div class="blog-card bg-white rounded-xl shadow-sm p-6 border border-gray-200" data-category="breakthrough collaboration">
+            <div class="blog-card bg-white rounded-xl shadow-sm p-6 border border-gray-200 flex flex-col" data-category="breakthrough collaboration">
                 <div class="flex items-center gap-2 mb-3">
                     <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Breakthrough</span>
                     <span class="text-gray-500 text-sm">• 2 weeks ago</span>
@@ -265,6 +273,7 @@
                 <h3 class="text-xl font-bold text-gray-900 mb-3">First Successful Lab-Grown Organ Transplant in Mice</h3>
                 <p class="text-gray-600 mb-4">Our bioengineering team has successfully transplanted lab-grown kidney tissue in mice, marking a major step toward solving the organ shortage crisis.</p>
                 
+        
                 <div class="flex items-center mb-4">
                     <div class="w-8 h-8 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3">
                         AR
@@ -283,6 +292,7 @@
                     </div>
                     <button class="text-blue-600 hover:text-blue-700 text-sm font-medium">Read More</button>
                 </div>
+            
             </div>
 
             <!-- Article Card 5 -->
@@ -376,7 +386,7 @@
             </div>
 
             <!-- Article Card 8 -->
-            <div class="blog-card bg-white rounded-xl shadow-sm p-6 border border-gray-200" data-category="behind-scenes funding">
+            <div class="blog-card bg-white rounded-xl shadow-sm p-6 border border-gray-200 " data-category="behind-scenes funding">
                 <div class="flex items-center gap-2 mb-3">
                     <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Behind the Scenes</span>
                     <span class="text-gray-500 text-sm">• 1 month ago</span>

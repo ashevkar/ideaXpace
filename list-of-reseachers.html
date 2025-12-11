@@ -114,7 +114,8 @@
         const roleFromTitle = (title = '') => {
             const normalized = title.toLowerCase();
             if (normalized.includes('consultant')) return 'consultant';
-            if (normalized.includes('professor')) return 'pi';
+            if (normalized.includes('principal investigator') || normalized.includes('professor')) return 'pi';
+            if (normalized.includes('researcher')) return 'researcher';
             return 'researcher';
         };
 
@@ -207,7 +208,7 @@
                         </div>
 
                         <div class="mt-auto">
-                            <a href="./researcher-profile.html">
+                            <a href="./researcher-profile.html?id=${researcher.id}">
                                 <button class="w-full asu text-white py-2 rounded-lg hover:bg-red-900 text-sm font-medium">
                                     View Profile
                                 </button>
